@@ -8,11 +8,25 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/highlight-theme.css">
+    <link rel="stylesheet" href="css/modal.css">
     <!-- Precargar recursos críticos -->
     <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="css/modal.css" as="style">
     <link rel="preload" href="js/main.js" as="script">
 </head>
 <body>
+    <!-- Modal para mostrar el contenido completo de los prompts -->
+    <div id="prompt-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="modal-title">Título del Prompt</h2>
+            <div id="modal-body">
+                <!-- El contenido del prompt se insertará aquí -->
+            </div>
+            <button id="modal-copy" class="copy-button">Copiar al portapapeles</button>
+        </div>
+    </div>
+
     <header class="hero">
         <div class="container">
             <div class="hero-content">
@@ -208,7 +222,7 @@
                                 <code>interactive-prd-creation-prompt.md</code>
                             </div>
                         </div>
-                        <button class="prompt-toggle">Ver detalles</button>
+                        <button class="prompt-toggle" data-prompt-id="interactive-prd-creation">Ver detalles</button>
                     </div>
                     
                     <div class="prompt-card" id="prompt-verification">
@@ -247,7 +261,7 @@
                                 <code>prd-comprehensive-verification-prompt.md</code>
                             </div>
                         </div>
-                        <button class="prompt-toggle">Ver detalles</button>
+                        <button class="prompt-toggle" data-prompt-id="verification">Ver detalles</button>
                     </div>
                     
                     <div class="prompt-card" id="prompt-features">
@@ -270,7 +284,7 @@
                                 <code>prd-to-features-prompt.md</code>
                             </div>
                         </div>
-                        <button class="prompt-toggle">Ver detalles</button>
+                        <button class="prompt-toggle" data-prompt-id="features">Ver detalles</button>
                     </div>
                     
                     <div class="prompt-card" id="prompt-rules">
@@ -293,7 +307,7 @@
                                 <code>prd-to-rules-prompt.md</code>
                             </div>
                         </div>
-                        <button class="prompt-toggle">Ver detalles</button>
+                        <button class="prompt-toggle" data-prompt-id="rules">Ver detalles</button>
                     </div>
                     
                     <div class="prompt-card" id="prompt-rfcs">
@@ -316,7 +330,7 @@
                                 <code>prd-to-rfcs-prompt.md</code>
                             </div>
                         </div>
-                        <button class="prompt-toggle">Ver detalles</button>
+                        <button class="prompt-toggle" data-prompt-id="rfcs">Ver detalles</button>
                     </div>
                     
                     <div class="prompt-card" id="prompt-implementation">
@@ -350,7 +364,7 @@
                                 <code>implementation-prompt-template.md</code>
                             </div>
                         </div>
-                        <button class="prompt-toggle">Ver detalles</button>
+                        <button class="prompt-toggle" data-prompt-id="implementation">Ver detalles</button>
                     </div>
                     
                     <div class="prompt-card" id="prompt-change">
@@ -374,7 +388,7 @@
                                 <code>prd-change-management-prompt.md</code>
                             </div>
                         </div>
-                        <button class="prompt-toggle">Ver detalles</button>
+                        <button class="prompt-toggle" data-prompt-id="change-management">Ver detalles</button>
                     </div>
                 </div>
             </div>
@@ -455,10 +469,12 @@ chmod +x copy-prompt.sh
         <div class="container">
             <p>Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo LICENSE para más detalles.</p>
             <p class="footer-tagline">Hecho con ❤️ para un mejor desarrollo de productos con IA</p>
+            <p class="attribution">Basado e inspirado en <a href="https://github.com/nurettincoban/cursor-ai-prd-workflow" target="_blank">PRD Workflow Tools</a> de <a href="https://github.com/nurettincoban" target="_blank">nurettincoban</a>.</p>
         </div>
     </footer>
 
     <script src="js/highlight.min.js"></script>
+    <script src="js/prompts-es.js"></script>
     <script src="js/theme-switcher.js"></script>
     <script src="js/main.js"></script>
 </body>

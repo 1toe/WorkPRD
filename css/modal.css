@@ -1,0 +1,178 @@
+/* Estilos para el modal de prompts */
+
+/* Fondo del modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+/* Modal visible */
+.modal.visible {
+  display: block;
+  opacity: 1;
+}
+
+/* Contenido del modal */
+.modal-content {
+  position: relative;
+  background-color: var(--bg-light);
+  margin: 5vh auto;
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow);
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: translateY(-20px);
+  transition: transform var(--transition-normal);
+}
+
+/* Animación de entrada del modal */
+.modal.visible .modal-content {
+  transform: translateY(0);
+}
+
+/* Botón de cierre */
+.modal-close {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  color: var(--text-medium);
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* Título del modal */
+#modal-title {
+  margin-top: 0;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-primary);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+/* Cuerpo del modal */
+#modal-body {
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.6;
+}
+
+/* Formateo de markdown en el modal */
+#modal-body h1,
+#modal-body h2,
+#modal-body h3,
+#modal-body h4,
+#modal-body h5,
+#modal-body h6 {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+#modal-body h1 {
+  font-size: var(--font-size-xxl);
+}
+
+#modal-body h2 {
+  font-size: var(--font-size-xl);
+}
+
+#modal-body h3 {
+  font-size: var(--font-size-lg);
+}
+
+#modal-body p,
+#modal-body ul,
+#modal-body ol {
+  margin-bottom: var(--spacing-md);
+}
+
+#modal-body ul,
+#modal-body ol {
+  padding-left: var(--spacing-lg);
+}
+
+#modal-body li {
+  margin-bottom: var(--spacing-xs);
+}
+
+#modal-body code {
+  font-family: var(--font-code);
+  background-color: var(--bg-alt);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-sm);
+}
+
+#modal-body pre {
+  background-color: var(--bg-alt);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  overflow-x: auto;
+  margin-bottom: var(--spacing-md);
+}
+
+#modal-body pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Botón de copiar */
+.copy-button {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: var(--color-primary);
+  color: var(--text-light);
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.copy-button:hover {
+  background-color: var(--color-accent);
+}
+
+.copy-button.copied {
+  background-color: var(--color-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: var(--spacing-md);
+    margin: 3vh auto;
+    max-height: 94vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: var(--spacing-sm);
+  }
+  
+  #modal-title {
+    font-size: var(--font-size-xl);
+  }
+}

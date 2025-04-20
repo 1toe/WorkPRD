@@ -1,121 +1,137 @@
-/**
- * Funcionalidad principal del sitio web PRD Workflow Tools
- * 
- * Este script maneja la interactividad general del sitio web,
- * incluyendo la expansión de tarjetas de prompts y el resaltado de sintaxis.
- */
-
-// Esperar a que el DOM esté completamente cargado
+// Actualizar el archivo index.html para incluir el nuevo CSS
 document.addEventListener('DOMContentLoaded', function() {
-  // Inicializar resaltado de sintaxis
-  initializeCodeHighlighting();
+  // Inicializar highlight.js
+  hljs.highlightAll();
   
-  // Configurar interactividad de tarjetas de prompts
-  setupPromptCards();
+  // Inicializar los toggles de los prompts
+  initPromptToggles();
   
-  // Configurar navegación suave
-  setupSmoothScrolling();
+  // Inicializar el modal
+  initModal();
 });
 
-/**
- * Inicializa el resaltado de sintaxis para bloques de código
- */
-function initializeCodeHighlighting() {
-  // Aplicar resaltado a todos los bloques de código
-  document.querySelectorAll('pre code').forEach(function(block) {
-    hljs.highlightBlock(block);
-  });
-}
-
-/**
- * Configura la interactividad de las tarjetas de prompts
- */
-function setupPromptCards() {
-  // Obtener todos los botones de alternancia de prompts
-  const toggleButtons = document.querySelectorAll('.prompt-toggle');
+// Función para inicializar los toggles de los prompts
+function initPromptToggles() {
+  const promptToggleButtons = document.querySelectorAll('.prompt-toggle');
   
-  // Agregar evento de clic a cada botón
-  toggleButtons.forEach(function(button) {
+  promptToggleButtons.forEach(button => {
     button.addEventListener('click', function() {
-      // Obtener el contenedor de detalles del prompt
-      const details = this.previousElementSibling;
-      
-      // Alternar clase activa
-      details.classList.toggle('active');
-      
-      // Cambiar texto del botón
-      if (details.classList.contains('active')) {
-        this.textContent = 'Ocultar detalles';
-      } else {
-        this.textContent = 'Ver detalles';
-      }
+      const promptId = this.getAttribute('data-prompt-id');
+      showPromptModal(promptId);
     });
   });
 }
 
-/**
- * Configura la navegación suave al hacer clic en enlaces internos
- */
-function setupSmoothScrolling() {
-  // Obtener todos los enlaces internos
-  const internalLinks = document.querySelectorAll('a[href^="#"]');
+// Función para inicializar el modal
+function initModal() {
+  const modal = document.getElementById('prompt-modal');
+  const closeButton = document.querySelector('.modal-close');
+  const copyButton = document.getElementById('modal-copy');
   
-  // Agregar evento de clic a cada enlace
-  internalLinks.forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      // Prevenir comportamiento predeterminado
-      e.preventDefault();
-      
-      // Obtener el destino del enlace
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      
-      // Desplazarse suavemente al destino
-      if (targetElement) {
-        // Calcular posición de desplazamiento (considerando la barra de navegación fija)
-        const navHeight = document.querySelector('.main-nav').offsetHeight;
-        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+  // Cerrar el modal al hacer clic en el botón de cierre
+  closeButton.addEventListener('click', function() {
+    closeModal();
+  });
+  
+  // Cerrar el modal al hacer clic fuera del contenido
+  window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+  
+  // Cerrar el modal al presionar Escape
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  });
+  
+  // Copiar el contenido del prompt al portapapeles
+  copyButton.addEventListener('click', function() {
+    const modalBody = document.getElementById('modal-body');
+    const textToCopy = modalBody.textContent;
+    
+    navigator.clipboard.writeText(textToCopy)
+      .then(() => {
+        copyButton.textContent = '¡Copiado al portapapeles!';
+        copyButton.classList.add('copied');
         
-        // Realizar desplazamiento suave
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
+        setTimeout(() => {
+          copyButton.textContent = 'Copiar al portapapeles';
+          copyButton.classList.remove('copied');
+        }, 2000);
+      })
+      .catch(err => {
+        console.error('Error al copiar: ', err);
+        copyButton.textContent = 'Error al copiar';
+        
+        setTimeout(() => {
+          copyButton.textContent = 'Copiar al portapapeles';
+        }, 2000);
+      });
   });
 }
 
-/**
- * Detecta cuando los elementos entran en el viewport para animaciones
- */
-function setupScrollAnimations() {
-  // Verificar soporte para Intersection Observer
-  if ('IntersectionObserver' in window) {
-    // Crear un nuevo observador
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        // Agregar clase cuando el elemento es visible
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          // Dejar de observar después de la animación
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      // Opciones del observador
-      threshold: 0.1, // Activar cuando al menos 10% del elemento es visible
-      rootMargin: '0px 0px -50px 0px' // Margen negativo para activar un poco antes
-    });
-    
-    // Observar todos los elementos animables
-    document.querySelectorAll('.animate-on-scroll').forEach(element => {
-      observer.observe(element);
-    });
-  } else {
-    // Fallback para navegadores que no soportan Intersection Observer
-    document.querySelectorAll('.animate-on-scroll').forEach(element => {
-      element.classList.add('visible');
-    });
+// Función para mostrar el modal con el contenido del prompt
+function showPromptModal(promptId) {
+  const modal = document.getElementById('prompt-modal');
+  const modalTitle = document.getElementById('modal-title');
+  const modalBody = document.getElementById('modal-body');
+  
+  // Obtener el título del prompt
+  let title = '';
+  switch(promptId) {
+    case 'interactive-prd-creation':
+      title = 'Creación Interactiva de PRD';
+      break;
+    case 'verification':
+      title = 'Verificación Integral de PRD';
+      break;
+    case 'features':
+      title = 'Extracción de Características de PRD';
+      break;
+    case 'rules':
+      title = 'PRD a Reglas';
+      break;
+    case 'rfcs':
+      title = 'PRD a RFCs';
+      break;
+    case 'implementation':
+      title = 'Plantilla de Implementación';
+      break;
+    case 'change-management':
+      title = 'Gestión de Cambios de PRD';
+      break;
+    default:
+      title = 'Prompt';
   }
+  
+  // Establecer el título del modal
+  modalTitle.textContent = title;
+  
+  // Establecer el contenido del modal
+  if (promptsContent[promptId]) {
+    // Convertir el contenido de markdown a HTML
+    modalBody.innerHTML = `<pre>${promptsContent[promptId]}</pre>`;
+  } else {
+    modalBody.innerHTML = '<p>Lo sentimos, no se pudo cargar el contenido del prompt.</p>';
+  }
+  
+  // Mostrar el modal
+  modal.classList.add('visible');
+  
+  // Deshabilitar el desplazamiento del cuerpo
+  document.body.style.overflow = 'hidden';
+}
+
+// Función para cerrar el modal
+function closeModal() {
+  const modal = document.getElementById('prompt-modal');
+  
+  // Ocultar el modal
+  modal.classList.remove('visible');
+  
+  // Habilitar el desplazamiento del cuerpo
+  document.body.style.overflow = '';
 }
