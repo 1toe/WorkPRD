@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRD Workflow Tools - Desarrollo de Productos con IA</title>
+    <meta name="description" content="Herramientas de flujo de trabajo PRD para optimizar el desarrollo de productos con asistentes de IA">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/highlight-theme.css">
+    <!-- Precargar recursos críticos -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="logo-container">
+                    <svg class="logo" width="200" height="200" viewBox="0 0 200 200">
+                        <!-- Placeholder para logo SVG -->
+                        <rect width="200" height="200" fill="#3498db" rx="20"></rect>
+                        <text x="100" y="120" font-size="40" text-anchor="middle" fill="white">PRD</text>
+                    </svg>
+                </div>
+                <div class="hero-text">
+                    <h1>PRD Workflow Tools</h1>
+                    <h2>Desarrollo de Productos Potenciado por IA</h2>
+                    <p>Una colección de prompts reutilizables para optimizar tu flujo de trabajo de desarrollo de productos</p>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                        <span class="icon-light">☀️</span>
+                        <span class="icon-dark">🌙</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#introduccion">Introducción</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#flujo-trabajo">Flujo de Trabajo</a></li>
+                <li><a href="#prompts">Prompts</a></li>
+                <li><a href="#como-usar">Cómo Usar</a></li>
+                <li><a href="#consejos">Consejos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="introduccion" class="section">
+            <div class="container">
+                <h2>¿Qué es PRD Workflow Tools?</h2>
+                <p>PRD Workflow Tools es una colección de prompts (instrucciones) diseñados para asistentes de IA que automatizan tareas comunes en el proceso de desarrollo de productos. Estos prompts pueden copiarse y pegarse en cualquier asistente de IA (como Cursor, ChatGPT, Claude, etc.) para mejorar y agilizar tu flujo de trabajo de desarrollo.</p>
+                <p>El enfoque se basa en la metodología de desarrollo impulsada por PRD (Product Requirements Document) y RFC (Request for Comments), que proporciona una estructura clara y eficiente para la colaboración entre humanos y asistentes de IA.</p>
+            </div>
+        </section>
+
+        <section id="beneficios" class="section">
+            <div class="container">
+                <h2>Beneficios del Desarrollo basado en PRD y RFC</h2>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🤖</div>
+                        <h3>Colaboración Mejorada con IA</h3>
+                        <ul>
+                            <li><strong>Instrucciones más claras:</strong> Los PRD y RFC bien definidos proporcionan a la IA un contexto y requisitos precisos, resultando en implementaciones más precisas</li>
+                            <li><strong>Reducción de alucinaciones:</strong> La documentación estructurada minimiza la tendencia de la IA a "rellenar los vacíos" con suposiciones incorrectas</li>
+                            <li><strong>Modelo mental consistente:</strong> Tanto humanos como IA trabajan desde la misma comprensión documentada, reduciendo desalineaciones</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚙️</div>
+                        <h3>Proceso de Desarrollo Mejorado</h3>
+                        <ul>
+                            <li><strong>Establecimiento de límites:</strong> Un alcance claramente definido evita que la IA implemente características no deseadas o fuera de alcance</li>
+                            <li><strong>Verificación incremental:</strong> Dividir el trabajo en RFC permite la validación en cada paso en lugar de solo al finalizar el proyecto</li>
+                            <li><strong>Trazabilidad:</strong> Cada implementación puede rastrearse hasta requisitos específicos, facilitando la verificación de corrección</li>
+                            <li><strong>Reducción de retrabajos:</strong> Especificaciones claras desde el inicio minimizan la necesidad de revisiones importantes más adelante</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💼</div>
+                        <h3>Beneficios Empresariales</h3>
+                        <ul>
+                            <li><strong>Resultados predecibles:</strong> El enfoque estructurado conduce a cronogramas y resultados de desarrollo más predecibles</li>
+                            <li><strong>Preservación del conocimiento:</strong> La documentación sirve como referencia persistente incluso cuando cambian los miembros del equipo o las herramientas de IA</li>
+                            <li><strong>Alineación de stakeholders:</strong> Los PRD crean un entendimiento compartido entre equipos de negocio, técnicos y asistentes de IA</li>
+                            <li><strong>Incorporación más rápida:</strong> Nuevos miembros del equipo o herramientas de IA pueden entender rápidamente los objetivos y restricciones del proyecto</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🧠</div>
+                        <h3>Ventajas Específicas para IA</h3>
+                        <ul>
+                            <li><strong>Optimización de ventana de contexto:</strong> Dividir proyectos grandes en RFC enfocados ayuda a la IA a trabajar dentro de las limitaciones de ventana de contexto</li>
+                            <li><strong>Experiencia dirigida:</strong> Diferentes aspectos del proyecto pueden dirigirse a modelos o prompts de IA especializados</li>
+                            <li><strong>Refinamiento iterativo:</strong> La IA puede sugerir mejoras a PRD y RFC antes de que comience la implementación</li>
+                            <li><strong>Control de calidad:</strong> La documentación estructurada proporciona criterios claros para que la IA autoevalúe sus resultados</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="flujo-trabajo" class="section">
+            <div class="container">
+                <h2>Flujo de Trabajo Recomendado</h2>
+                
+                <div class="workflow-diagram">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Crear PRD</h3>
+                            <p>Comienza con una idea vaga y desarróllala en un PRD completo usando el prompt de Creación Interactiva</p>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Verificar PRD</h3>
+                            <p>Identifica brechas críticas y mejora la calidad usando el prompt de Verificación Integral</p>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Extraer Características</h3>
+                            <p>Transforma tu PRD verificado en características organizadas con prioridades y criterios de aceptación</p>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Crear Reglas</h3>
+                            <p>Establece directrices técnicas y estándares basados en tu PRD y características</p>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Generar RFCs</h3>
+                            <p>Divide el proyecto en unidades de implementación lógicas y manejables</p>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h3>Implementar RFCs</h3>
+                            <p>Usa la plantilla de implementación para cada RFC para guiar el desarrollo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workflow-change-management">
+                    <h3>Gestión de Cambios</h3>
+                    <p>Cuando surgen nuevos requisitos o cambios durante el desarrollo:</p>
+                    <ol>
+                        <li><strong>Analizar Cambios</strong> - Usa el prompt de Gestión de Cambios para evaluar el impacto y la estrategia de integración</li>
+                        <li><strong>Actualizar Documentos</strong> - Revisa el PRD, características, reglas y RFCs afectados según el análisis</li>
+                        <li><strong>Continuar Implementación</strong> - Reanuda el desarrollo con la documentación actualizada</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="prompts" class="section">
+            <div class="container">
+                <h2>Prompts Disponibles</h2>
+                
+                <div class="prompts-grid">
+                    <div class="prompt-card" id="prompt-interactive-creation">
+                        <h3>Creación Interactiva de PRD</h3>
+                        <p>Crea un PRD a través de un proceso guiado de preguntas paso a paso</p>
+                        <div class="prompt-details">
+                            <h4>Descripción</h4>
+                            <p>Este prompt actúa como un Product Manager experimentado que te guía a través de un proceso de preguntas para transformar una idea vaga de producto en un PRD completo y estructurado.</p>
+                            
+                            <h4>Secciones del PRD</h4>
+                            <ul>
+                                <li>Visión general del producto</li>
+                                <li>Metas y objetivos</li>
+                                <li>Alcance</li>
+                                <li>Personas o público objetivo</li>
+                                <li>Requisitos funcionales</li>
+                                <li>Requisitos no funcionales</li>
+                                <li>Viajes del usuario</li>
+                                <li>Métricas de éxito</li>
+                                <li>Cronograma</li>
+                                <li>Preguntas abiertas/suposiciones</li>
+                            </ul>
+                            
+                            <h4>Proceso</h4>
+                            <p>El prompt realiza preguntas en lotes de 3-5 preguntas relacionadas a la vez, comenzando con preguntas amplias y fundamentales antes de profundizar en detalles específicos.</p>
+                            
+                            <div class="prompt-filename">
+                                <code>interactive-prd-creation-prompt.md</code>
+                            </div>
+                        </div>
+                        <button class="prompt-toggle">Ver detalles</button>
+                    </div>
+                    
+                    <div class="prompt-card" id="prompt-verification">
+                        <h3>Verificación Integral de PRD</h3>
+                        <p>Verifica y mejora tu PRD identificando brechas críticas y problemas de calidad</p>
+                        <div class="prompt-details">
+                            <h4>Descripción</h4>
+                            <p>Este prompt revisa tu PRD existente para identificar brechas, mejorar la claridad y asegurar que esté listo para implementación.</p>
+                            
+                            <h4>Análisis de Brechas</h4>
+                            <p>Identifica elementos faltantes en áreas clave:</p>
+                            <ul>
+                                <li>Fundamentos del producto</li>
+                                <li>Requisitos técnicos</li>
+                                <li>Consideraciones de negocio</li>
+                                <li>Factores de implementación</li>
+                            </ul>
+                            
+                            <h4>Recomendaciones de Mejora</h4>
+                            <p>Proporciona recomendaciones específicas para mejorar:</p>
+                            <ul>
+                                <li>Estructura y claridad</li>
+                                <li>Completitud y viabilidad</li>
+                                <li>Priorización e implementación</li>
+                            </ul>
+                            
+                            <h4>Entregables</h4>
+                            <ul>
+                                <li>Resumen de hallazgos</li>
+                                <li>Recomendaciones específicas</li>
+                                <li>PRD mejorado</li>
+                                <li>Evaluación de calidad</li>
+                            </ul>
+                            
+                            <div class="prompt-filename">
+                                <code>prd-comprehensive-verification-prompt.md</code>
+                            </div>
+                        </div>
+                        <button class="prompt-toggle">Ver detalles</button>
+                    </div>
+                    
+                    <div class="prompt-card" id="prompt-features">
+                        <h3>Extracción de Características de PRD</h3>
+                        <p>Extrae y organiza características de tu PRD</p>
+                        <div class="prompt-details">
+                            <h4>Descripción</h4>
+                            <p>Este prompt extrae y organiza todas las características descritas en tu PRD, organizándolas por prioridad y categoría para la planificación de implementación.</p>
+                            
+                            <h4>Proceso</h4>
+                            <ul>
+                                <li><strong>Identificación de características:</strong> Extrae todas las características explícitas e implícitas mencionadas en el PRD</li>
+                                <li><strong>Categorización:</strong> Agrupa características por categorías lógicas</li>
+                                <li><strong>Priorización:</strong> Aplica priorización MoSCoW a cada característica</li>
+                                <li><strong>Detalle:</strong> Proporciona descripción clara y criterios de aceptación para cada característica</li>
+                                <li><strong>Complejidad:</strong> Estima la complejidad relativa de implementación</li>
+                            </ul>
+                            
+                            <div class="prompt-filename">
+                                <code>prd-to-features-prompt.md</code>
+                            </div>
+                        </div>
+                        <button class="prompt-toggle">Ver detalles</button>
+                    </div>
+                    
+                    <div class="prompt-card" id="prompt-rules">
+                        <h3>PRD a Reglas</h3>
+                        <p>Genera directrices técnicas y estándares para el desarrollo</p>
+                        <div class="prompt-details">
+                            <h4>Descripción</h4>
+                            <p>Este prompt crea un archivo RULES.md que establece directrices técnicas y generales para la asistencia de IA durante el proceso de desarrollo.</p>
+                            
+                            <h4>Contenido</h4>
+                            <ul>
+                                <li><strong>Definición de stack tecnológico:</strong> Identifica tecnologías principales y versiones a utilizar</li>
+                                <li><strong>Preferencias técnicas:</strong> Establece convenciones de nomenclatura, organización de código, patrones arquitectónicos, etc.</li>
+                                <li><strong>Estándares de desarrollo:</strong> Define requisitos de pruebas, documentación, manejo de errores, etc.</li>
+                                <li><strong>Prioridades de implementación:</strong> Clarifica qué características son fundamentales vs. mejoras</li>
+                                <li><strong>Directrices generales:</strong> Establece reglas para seguir requisitos con precisión, calidad de código, etc.</li>
+                            </ul>
+                            
+                            <div class="prompt-filename">
+                                <code>prd-to-rules-prompt.md</code>
+                            </div>
+                        </div>
+                        <button class="prompt-toggle">Ver detalles</button>
+                    </div>
+                    
+                    <div class="prompt-card" id="prompt-rfcs">
+                        <h3>PRD a RFCs</h3>
+                        <p>Divide tu PRD en unidades de implementación manejables</p>
+                        <div class="prompt-details">
+                            <h4>Descripción</h4>
+                            <p>Este prompt divide el proyecto en documentos RFC (Request for Comments) lógicos y manejables para implementación, organizados en un orden claro que tiene en cuenta dependencias y secuencia lógica de construcción.</p>
+                            
+                            <h4>Proceso</h4>
+                            <ul>
+                                <li><strong>Análisis de orden de implementación:</strong> Determina la secuencia óptima de implementación</li>
+                                <li><strong>Agrupación de características:</strong> Agrupa características relacionadas que deben implementarse juntas</li>
+                                <li><strong>Estructura de RFC:</strong> Proporciona identificador único, título, resumen, enfoque técnico, etc.</li>
+                                <li><strong>Consideraciones de implementación:</strong> Destaca desafíos técnicos, casos límite, enfoques de prueba, etc.</li>
+                                <li><strong>Creación de prompts de implementación:</strong> Crea prompts de implementación en secuencia numérica estricta</li>
+                            </ul>
+                            
+                            <div class="prompt-filename">
+                                <code>prd-to-rfcs-prompt.md</code>
+                            </div>
+                        </div>
+                        <button class="prompt-toggle">Ver detalles</button>
+                    </div>
+                    
+                    <div class="prompt-card" id="prompt-implementation">
+                        <h3>Plantilla de Implementación</h3>
+                        <p>Plantilla para implementar RFCs individuales</p>
+                        <div class="prompt-details">
+                            <h4>Descripción</h4>
+                            <p>Esta plantilla proporciona una estructura para implementar RFCs individuales, guiando al desarrollador (humano o IA) a través del proceso de implementación.</p>
+                            
+                            <h4>Enfoque de Implementación en Dos Fases</h4>
+                            <ol>
+                                <li><strong>Fase 1: Planificación de Implementación</strong>
+                                    <ul>
+                                        <li>Analizar requisitos y código existente</li>
+                                        <li>Desarrollar un plan de implementación integral</li>
+                                        <li>NO escribir código real durante esta fase</li>
+                                        <li>Esperar aprobación explícita del usuario antes de proceder</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Fase 2: Ejecución de Implementación</strong>
+                                    <ul>
+                                        <li>Seguir el plan aprobado</li>
+                                        <li>Implementar en segmentos lógicos</li>
+                                        <li>Explicar enfoque para secciones complejas</li>
+                                        <li>Realizar auto-revisión antes de finalizar</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            
+                            <div class="prompt-filename">
+                                <code>implementation-prompt-template.md</code>
+                            </div>
+                        </div>
+                        <button class="prompt-toggle">Ver detalles</button>
+                    </div>
+                    
+                    <div class="prompt-card" id="prompt-change">
+                        <h3>Gestión de Cambios de PRD</h3>
+                        <p>Gestiona cambios en tu PRD durante el desarrollo</p>
+                        <div class="prompt-details">
+                            <h4>Descripción</h4>
+                            <p>Este prompt analiza e integra cambios propuestos a un PRD existente mientras el desarrollo ya está en progreso, determinando la forma óptima de incorporar estos cambios con mínima interrupción.</p>
+                            
+                            <h4>Proceso</h4>
+                            <ul>
+                                <li><strong>Clasificación de cambios:</strong> Categoriza cada cambio propuesto (nueva característica, modificación, eliminación, etc.)</li>
+                                <li><strong>Análisis de impacto:</strong> Identifica componentes, características y RFCs afectados por cada cambio</li>
+                                <li><strong>Estrategia de implementación:</strong> Recomienda cómo y cuándo implementar cada cambio</li>
+                                <li><strong>Actualizaciones de documentación:</strong> Proporciona secciones actualizadas del PRD incorporando los cambios</li>
+                                <li><strong>Plan de comunicación:</strong> Identifica stakeholders que necesitan ser informados de los cambios</li>
+                                <li><strong>Evaluación de riesgos:</strong> Identifica riesgos introducidos por la implementación de cambios durante el desarrollo</li>
+                            </ul>
+                            
+                            <div class="prompt-filename">
+                                <code>prd-change-management-prompt.md</code>
+                            </div>
+                        </div>
+                        <button class="prompt-toggle">Ver detalles</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-usar" class="section">
+            <div class="container">
+                <h2>Cómo Usar</h2>
+                
+                <div class="usage-methods">
+                    <div class="usage-method">
+                        <h3>Método 1: Copia Manual</h3>
+                        <ol>
+                            <li>Abre el archivo de prompt deseado</li>
+                            <li>Copia todo el contenido</li>
+                            <li>Pégalo en tu asistente de IA (Cursor, ChatGPT, Claude, etc.)</li>
+                            <li>Adjunta tu PRD o documentos relevantes</li>
+                            <li>Deja que la IA procese tu solicitud</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="usage-method">
+                        <h3>Método 2: Usando el Script de Copia</h3>
+                        <p>Para mayor comodidad, puedes usar el script incluido para copiar un prompt a tu portapapeles:</p>
+                        
+                        <div class="code-block">
+                            <pre><code class="language-bash"># Hacer el script ejecutable (solo la primera vez)
+chmod +x copy-prompt.sh
+
+# Copiar un prompt al portapapeles
+./copy-prompt.sh interactive-prd-creation-prompt.md
+
+# Ver prompts disponibles
+./copy-prompt.sh</code></pre>
+                        </div>
+                        
+                        <p>Luego pega el prompt en tu asistente de IA y procede normalmente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="consejos" class="section">
+            <div class="container">
+                <h2>Consejos Rápidos</h2>
+                
+                <div class="tips-container">
+                    <div class="tip">
+                        <div class="tip-icon">💡</div>
+                        <p>Proporciona documentos completos cuando sea posible</p>
+                    </div>
+                    
+                    <div class="tip">
+                        <div class="tip-icon">💡</div>
+                        <p>Responde cualquier pregunta aclaratoria que la IA haga</p>
+                    </div>
+                    
+                    <div class="tip">
+                        <div class="tip-icon">💡</div>
+                        <p>Revisa y personaliza los resultados de la IA antes de la implementación</p>
+                    </div>
+                    
+                    <div class="tip">
+                        <div class="tip-icon">💡</div>
+                        <p>Usa los prompts en secuencia para mejores resultados</p>
+                    </div>
+                    
+                    <div class="tip">
+                        <div class="tip-icon">💡</div>
+                        <p>Para proyectos complejos, itera a través de los prompts según sea necesario</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo LICENSE para más detalles.</p>
+            <p class="footer-tagline">Hecho con ❤️ para un mejor desarrollo de productos con IA</p>
+        </div>
+    </footer>
+
+    <script src="js/highlight.min.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
