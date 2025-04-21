@@ -228,202 +228,43 @@
                     <div class="prompt-card" id="prompt-interactive-creation">
                         <h3>Creación Interactiva de PRD</h3>
                         <p>Crea un PRD a través de un proceso guiado de preguntas paso a paso</p>
-                        <div class="prompt-details">
-                            <h4>Descripción</h4>
-                            <p>Este prompt actúa como un Product Manager experimentado que te guía a través de un
-                                proceso de preguntas para transformar una idea vaga de producto en un PRD completo y
-                                estructurado.</p>
-
-                            <h4>Secciones del PRD</h4>
-                            <ul>
-                                <li>Visión general del producto</li>
-                                <li>Metas y objetivos</li>
-                                <li>Alcance</li>
-                                <li>Personas o público objetivo</li>
-                                <li>Requisitos funcionales</li>
-                                <li>Requisitos no funcionales</li>
-                                <li>Viajes del usuario</li>
-                                <li>Métricas de éxito</li>
-                                <li>Cronograma</li>
-                                <li>Preguntas abiertas/suposiciones</li>
-                            </ul>
-
-                            <h4>Proceso</h4>
-                            <p>El prompt realiza preguntas en lotes de 3-5 preguntas relacionadas a la vez, comenzando
-                                con preguntas amplias y fundamentales antes de profundizar en detalles específicos.</p>
-
-                            <div class="prompt-filename">
-                                <code>interactive-prd-creation-prompt.md</code>
-                            </div>
-                        </div>
-                        <a href="interactive-prd-creation-prompt.html" class="prompt-toggle"
-                            data-prompt-id="interactive-prd-creation">Ver detalles</a>
+                        <a href="views/interactive-prd-creation-prompt.html" class="prompt-toggle">Ver detalles</a>
                     </div>
 
                     <div class="prompt-card" id="prompt-verification">
                         <h3>Verificación Integral de PRD</h3>
                         <p>Verifica y mejora tu PRD identificando brechas críticas y problemas de calidad</p>
-                        <div class="prompt-details">
-                            <h4>Descripción</h4>
-                            <p>Este prompt revisa tu PRD existente para identificar brechas, mejorar la claridad y
-                                asegurar que esté listo para implementación.</p>
-
-                            <h4>Análisis de Brechas</h4>
-                            <p>Identifica elementos faltantes en áreas clave:</p>
-                            <ul>
-                                <li>Fundamentos del producto</li>
-                                <li>Requisitos técnicos</li>
-                                <li>Consideraciones de negocio</li>
-                                <li>Factores de implementación</li>
-                            </ul>
-
-                            <h4>Recomendaciones de Mejora</h4>
-                            <p>Proporciona recomendaciones específicas para mejorar:</p>
-                            <ul>
-                                <li>Estructura y claridad</li>
-                                <li>Completitud y viabilidad</li>
-                                <li>Priorización e implementación</li>
-                            </ul>
-
-                            <h4>Entregables</h4>
-                            <ul>
-                                <li>Resumen de hallazgos</li>
-                                <li>Recomendaciones específicas</li>
-                                <li>PRD mejorado</li>
-                                <li>Evaluación de calidad</li>
-                            </ul>
-
-                            <div class="prompt-filename">
-                                <code>prd-comprehensive-verification-prompt.md</code>
-                            </div>
-                        </div>
-                        <a href="prd-comprehensive-verification-prompt.html" class="prompt-toggle"
-                            data-prompt-id="verification">Ver detalles</a>
+                        <a href="views/prd-comprehensive-verification-prompt.html" class="prompt-toggle">Ver detalles</a>
                     </div>
 
                     <div class="prompt-card" id="prompt-features">
                         <h3>Extracción de Características de PRD</h3>
                         <p>Extrae y organiza características de tu PRD</p>
-                        <div class="prompt-details">
-                            <h4>Descripción</h4>
-                            <p>Este prompt extrae y organiza todas las características descritas en tu PRD,
-                                organizándolas por prioridad y categoría para la planificación de implementación.</p>
-
-                            <h4>Proceso</h4>
-                            <ul>
-                                <li><strong>Identificación de características:</strong> Extrae todas las características
-                                    explícitas e implícitas mencionadas en el PRD</li>
-                                <li><strong>Categorización:</strong> Agrupa características por categorías lógicas</li>
-                                <li><strong>Priorización:</strong> Aplica priorización MoSCoW a cada característica</li>
-                                <li><strong>Detalle:</strong> Proporciona descripción clara y criterios de aceptación
-                                    para cada característica</li>
-                                <li><strong>Complejidad:</strong> Estima la complejidad relativa de implementación</li>
-                            </ul>
-
-                            <div class="prompt-filename">
-                                <code>prd-to-features-prompt.md</code>
-                            </div>
-                        </div>
-                        <a href="prd-to-features-prompt.html" class="prompt-toggle" data-prompt-id="features">Ver
-                            detalles</a>
+                        <a href="views/prd-to-features-prompt.html" class="prompt-toggle">Ver detalles</a>
                     </div>
 
                     <div class="prompt-card" id="prompt-rules">
                         <h3>PRD a Reglas</h3>
                         <p>Genera directrices técnicas y estándares para el desarrollo</p>
-                        <div class="prompt-details">
-                            <h4>Descripción</h4>
-                            <p>Este prompt crea un archivo RULES.md que establece directrices técnicas y generales para
-                                la asistencia de IA durante el proceso de desarrollo.</p>
-
-                            <h4>Contenido</h4>
-                            <ul>
-                                <li><strong>Definición de stack tecnológico:</strong> Identifica tecnologías principales
-                                    y versiones a utilizar</li>
-                                <li><strong>Preferencias técnicas:</strong> Establece convenciones de nomenclatura,
-                                    organización de código, patrones arquitectónicos, etc.</li>
-                                <li><strong>Estándares de desarrollo:</strong> Define requisitos de pruebas,
-                                    documentación, manejo de errores, etc.</li>
-                                <li><strong>Prioridades de implementación:</strong> Clarifica qué características son
-                                    fundamentales vs. mejoras</li>
-                                <li><strong>Directrices generales:</strong> Establece reglas para seguir requisitos con
-                                    precisión, calidad de código, etc.</li>
-                            </ul>
-
-                            <div class="prompt-filename">
-                                <code>prd-to-rules-prompt.md</code>
-                            </div>
-                        </div>
-                        <a href="prd-to-rules-prompt.html" class="prompt-toggle" data-prompt-id="rules">Ver detalles</a>
+                        <a href="views/prd-to-rules-prompt.html" class="prompt-toggle">Ver detalles</a>
                     </div>
 
                     <div class="prompt-card" id="prompt-rfcs">
                         <h3>PRD a RFCs</h3>
                         <p>Divide tu PRD en unidades de implementación manejables</p>
-                        <div class="prompt-details">
-                            <h4>Descripción</h4>
-                            <p>Este prompt divide el proyecto en documentos RFC (Request for Comments) lógicos y
-                                manejables para implementación, organizados en un orden claro que tiene en cuenta
-                                dependencias y secuencia lógica de construcción.</p>
-
-                            <h4>Proceso</h4>
-                            <ul>
-                                <li><strong>Análisis de orden de implementación:</strong> Determina la secuencia óptima
-                                    de implementación</li>
-                                <li><strong>Agrupación de características:</strong> Agrupa características relacionadas
-                                    que deben implementarse juntas</li>
-                                <li><strong>Estructura de RFC:</strong> Proporciona identificador único, título,
-                                    resumen, enfoque técnico, etc.</li>
-                                <li><strong>Consideraciones de implementación:</strong> Destaca desafíos técnicos, casos
-                                    límite, enfoques de prueba, etc.</li>
-                                <li><strong>Creación de prompts de implementación:</strong> Crea prompts de
-                                    implementación en secuencia numérica estricta</li>
-                            </ul>
-
-                            <div class="prompt-filename">
-                                <code>prd-to-rfcs-prompt.md</code>
-                            </div>
-                        </div>
-                        <a href="prd-to-rfcs-prompt.html" class="prompt-toggle" data-prompt-id="rfcs">Ver detalles</a>
+                        <a href="views/prd-to-rfcs-prompt.html" class="prompt-toggle">Ver detalles</a>
                     </div>
 
                     <div class="prompt-card" id="prompt-implementation">
                         <h3>Plantilla de Implementación</h3>
                         <p>Plantilla para implementar RFCs individuales</p>
-                        <div class="prompt-details">
-                            <h4>Descripción</h4>
-                            <p>Esta plantilla proporciona una estructura para implementar RFCs individuales, guiando al
-                                desarrollador (humano o IA) a través del proceso de implementación.</p>
-
-                            <h4>Enfoque de Implementación en Dos Fases</h4>
-                            <ol>
-                                <li><strong>Fase 1: Planificación de Implementación</strong>
-                                    <ul>
-                                        <li>Analizar requisitos y código existente</li>
-                                        <li>Desarrollar un plan de implementación integral</li>
-                                        <li>NO escribir código real durante esta fase</li>
-                                        <li>Esperar aprobación explícita del usuario antes de proceder</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Fase 2: Ejecución de Implementación</strong>
-                                    <ul>
-                                        <li>Seguir el plan aprobado</li>
-                                        <li>Implementar en segmentos lógicos</li>
-                                        <li>Explicar enfoque para secciones complejas</li>
-                                        <li>Realizar auto-revisión antes de finalizar</li>
-                                    </ul>
-                                </li>
-                            </ol>
-
-                            <div class="prompt-filename">
-                                <code>implementation-prompt-template.md</code>
-                            </div>
-                        </div>
-                        <button class="prompt-toggle" data-prompt-id="implementation">Ver detalles</button>
+                        <a href="views/implementation-prompt-template.html" class="prompt-toggle">Ver detalles</a>
                     </div>
 
                     <div class="prompt-card" id="prompt-change">
-                        <button class="prompt-toggle" data-prompt-id="change-management">Ver detalles</button>
+                        <h3>Gestión de Cambios</h3>
+                        <p>Evalúa y gestiona cambios en los requisitos durante el desarrollo</p>
+                        <a href="views/prd-change-management-prompt.html" class="prompt-toggle">Ver detalles</a>
                     </div>
                 </div>
             </div>
@@ -435,7 +276,7 @@
                 <h2>Consejos Rápidos</h2>
 
                 <div class="tips-container">
-                    <div class="tip">
+                    <div class="tip"></div>
                         <div class="tip-icon">💡</div>
                         <p>Proporciona documentos completos cuando sea posible</p>
                     </div>
