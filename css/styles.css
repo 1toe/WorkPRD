@@ -278,6 +278,48 @@ button:hover {
   width: 100%;
 }
 
+/* Estilos de navegación para la estructura de archivos */
+.breadcrumbs {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-md) 0;
+  font-size: var(--font-size-sm);
+  flex-wrap: wrap;
+}
+
+.breadcrumbs li {
+  margin-right: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+.breadcrumbs li:after {
+  content: '/';
+  margin-left: var(--spacing-sm);
+  color: var(--text-medium);
+}
+
+.breadcrumbs li:last-child:after {
+  content: '';
+}
+
+.back-to-home {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  font-weight: 600;
+}
+
+.back-to-home:before {
+  content: '←';
+  margin-right: var(--spacing-xs);
+  transition: transform var(--transition-fast);
+}
+
+.back-to-home:hover:before {
+  transform: translateX(-3px);
+}
+
 /* Secciones */
 .section {
   padding: var(--spacing-xl) 0;
@@ -441,6 +483,46 @@ button:hover {
   background-color: var(--bg-alt);
   border-radius: var(--border-radius-sm);
   font-size: var(--font-size-sm);
+}
+
+/* Mejoras para la organización de vistas */
+.views-container .prompt-card {
+  margin-bottom: var(--spacing-lg);
+}
+
+.prompt-index-container {
+  background-color: var(--bg-light);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--box-shadow);
+  margin-bottom: var(--spacing-xl);
+}
+
+.prompt-index-container ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  list-style: none;
+  padding: 0;
+}
+
+.prompt-index-container ul li {
+  margin: 0;
+}
+
+.prompt-index-container ul a {
+  display: block;
+  padding: var(--spacing-md);
+  background-color: var(--bg-alt);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.prompt-index-container ul a:hover {
+  background-color: var(--color-primary);
+  color: var(--text-light);
+  transform: translateX(5px);
 }
 
 /* Métodos de uso */

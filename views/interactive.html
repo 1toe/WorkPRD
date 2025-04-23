@@ -4,27 +4,42 @@
     <meta charset="UTF-8">
     <title>Creación Interactiva de PRD</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/highlight-theme.css">
-    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/highlight-theme.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <!-- Precargar recursos críticos -->
+    <link rel="preload" href="../css/styles.css" as="style">
+    <link rel="preload" href="../css/modal.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
 </head>
 <body>
     <header class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="logo-container">
-                    <svg class="logo" width="100" height="100" viewBox="0 0 200 200">
-                        <rect width="200" height="200" fill="#3498db" rx="20"></rect>
-                        <text x="100" y="120" font-size="40" text-anchor="middle" fill="white">PRD</text>
-                    </svg>
-                </div>
                 <div class="hero-text">
-                    <h1>Creación Interactiva de PRD</h1>
+                    <h1 style="text-align: center;">Modo Interactivo</h1>
                 </div>
             </div>
         </div>
     </header>
+
+    <nav class="main-nav">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+            <span class="icon-light">☀️</span>
+            <span class="icon-dark">🌙</span>
+        </button>
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="prompts-index.html">Índice de Prompts</a></li>
+                <li><a href="#descripcion">Descripción</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#ejemplo">Ejemplo de Resultado</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <main>
         <section class="section">
             <div class="container">
@@ -62,6 +77,6 @@
     <script src="js/highlight.min.js"></script>
     <script src="js/prompts-es.js"></script>
     <script src="js/theme-switcher.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

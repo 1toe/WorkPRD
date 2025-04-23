@@ -4,51 +4,82 @@
     <meta charset="UTF-8">
     <title>Índice de Prompts PRD Workflow Tools</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/highlight-theme.css">
-    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/highlight-theme.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <!-- Precargar recursos críticos -->
+    <link rel="preload" href="../css/styles.css" as="style">
+    <link rel="preload" href="../css/modal.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
 </head>
 <body>
+    <!-- Modal para mostrar el contenido completo de los prompts -->
+    <div id="prompt-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="modal-title">Título del Prompt</h2>
+            <div id="modal-body">
+                <!-- El contenido del prompt se insertará aquí -->
+            </div>
+            <button id="modal-copy" class="copy-button">Copiar al portapapeles</button>
+        </div>
+    </div>
+
     <header class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="logo-container">
-                    <svg class="logo" width="100" height="100" viewBox="0 0 200 200">
-                        <rect width="200" height="200" fill="#3498db" rx="20"></rect>
-                        <text x="100" y="120" font-size="40" text-anchor="middle" fill="white">PRD</text>
-                    </svg>
-                </div>
                 <div class="hero-text">
-                    <h1>Índice de Prompts</h1>
-                    <h2>PRD Workflow Tools</h2>
+                    <h1 style="text-align: center;">Índice de Prompts</h1>
                 </div>
             </div>
         </div>
     </header>
+
+    <nav class="main-nav">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+            <span class="icon-light">☀️</span>
+            <span class="icon-dark">🌙</span>
+        </button>
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="prompts-index.html">Índice de Prompts</a></li>
+                <li><a href="#descripcion">Descripción</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#ejemplo">Ejemplo de Resultado</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <main>
         <section class="section">
             <div class="container">
-                <ul>
-                    <li><a href="interactive.html">Creación Interactiva de PRD</a></li>
-                    <li><a href="verification.html">Verificación Integral de PRD</a></li>
-                    <li><a href="features.html">Extracción de Características de PRD</a></li>
-                    <li><a href="rules.html">PRD a Reglas</a></li>
-                    <li><a href="rfcs.html">PRD a RFCs</a></li>
-                    <li><a href="implementation.html">Plantilla de Implementación</a></li>
-                    <li><a href="change.html">Gestión de Cambios de PRD</a></li>
-                </ul>
+                <h2>Prompts disponibles</h2>
+                <div class="prompts-list">
+                    <ul>
+                        <li><a href="interactive-prd-creation-prompt.html">Creación Interactiva de PRD</a></li>
+                        <li><a href="prd-comprehensive-verification-prompt.html">Verificación Integral de PRD</a></li>
+                        <li><a href="prd-to-features-prompt.html">Extracción de Características de PRD</a></li>
+                        <li><a href="prd-to-rules-prompt.html">PRD a Reglas</a></li>
+                        <li><a href="prd-to-rfcs-prompt.html">PRD a RFCs</a></li>
+                        <li><a href="implementation-prompt-template.html">Plantilla de Implementación</a></li>
+                        <li><a href="prd-change-management-prompt.html">Gestión de Cambios de PRD</a></li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
+
     <footer>
         <div class="container">
             <p>Este proyecto está licenciado bajo la Licencia MIT.</p>
+            <p><a href="../index.html">Volver al inicio</a></p>
         </div>
     </footer>
-    <script src="js/highlight.min.js"></script>
-    <script src="js/prompts-es.js"></script>
-    <script src="js/theme-switcher.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/prompts-es.js"></script>
+    <script src="../js/theme-switcher.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

@@ -4,24 +4,120 @@
     <meta charset="UTF-8">
     <title>PRD a Reglas - Detalles del Prompt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/highlight-theme.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <!-- Precargar recursos críticos -->
+    <link rel="preload" href="../css/styles.css" as="style">
+    <link rel="preload" href="../css/modal.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
 </head>
 <body>
-    <div class="prompt-details">
-        <h4>Descripción</h4>
-        <p>Este prompt crea un archivo RULES.md que establece directrices técnicas y generales para la asistencia de IA durante el proceso de desarrollo.</p>
-        
-        <h4>Contenido</h4>
-        <ul>
-            <li><strong>Definición de stack tecnológico:</strong> Identifica tecnologías principales y versiones a utilizar</li>
-            <li><strong>Preferencias técnicas:</strong> Establece convenciones de nomenclatura, organización de código, patrones arquitectónicos, etc.</li>
-            <li><strong>Estándares de desarrollo:</strong> Define requisitos de pruebas, documentación, manejo de errores, etc.</li>
-            <li><strong>Prioridades de implementación:</strong> Clarifica qué características son fundamentales vs. mejoras</li>
-            <li><strong>Directrices generales:</strong> Establece reglas para seguir requisitos con precisión, calidad de código, etc.</li>
-        </ul>
-        
-        <div class="prompt-filename">
-            <code>prd-to-rules-prompt.md</code>
+    <!-- Modal para mostrar el contenido completo del prompt -->
+    <div id="prompt-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="modal-title">PRD a Reglas</h2>
+            <div id="modal-body">
+                <!-- El contenido del prompt se insertará aquí -->
+            </div>
+            <button id="modal-copy" class="copy-button">Copiar al portapapeles</button>
         </div>
     </div>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 style="text-align: center;">PRD a Reglas de Negocio</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+            <span class="icon-light">☀️</span>
+            <span class="icon-dark">🌙</span>
+        </button>
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="prompts-index.html">Índice de Prompts</a></li>
+                <li><a href="#descripcion">Descripción</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#ejemplo">Ejemplo de Resultado</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="descripcion" class="section">
+            <div class="container">
+                <h2>Descripción</h2>
+                <div class="prompt-details">
+                    <p>Este prompt crea un archivo RULES.md que establece directrices técnicas y generales para la asistencia de IA durante el proceso de desarrollo.</p>
+                    
+                    <div class="action-buttons">
+                        <button class="view-prompt-btn" data-prompt="prd-to-rules">Ver Prompt Completo</button>
+                        <button class="copy-prompt-btn" data-prompt="prd-to-rules">Copiar Prompt</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contenido" class="section">
+            <div class="container">
+                <h2>Contenido</h2>
+                <div class="prompt-content">
+                    <ul>
+                        <li><strong>Definición de stack tecnológico:</strong> Identifica tecnologías principales y versiones a utilizar</li>
+                        <li><strong>Preferencias técnicas:</strong> Establece convenciones de nomenclatura, organización de código, patrones arquitectónicos, etc.</li>
+                        <li><strong>Estándares de desarrollo:</strong> Define requisitos de pruebas, documentación, manejo de errores, etc.</li>
+                        <li><strong>Prioridades de implementación:</strong> Clarifica qué características son fundamentales vs. mejoras</li>
+                        <li><strong>Directrices generales:</strong> Establece reglas para seguir requisitos con precisión, calidad de código, etc.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="ejemplo" class="section">
+            <div class="container">
+                <h2>Ejemplo de Resultado</h2>
+                <div class="prompt-example">
+                    <pre><code>
+# Reglas para el Desarrollo
+
+## Stack Tecnológico
+- **Frontend:** React 18, TypeScript 5.0+, TailwindCSS 3.0+
+- **Backend:** Node.js 18+, Express 4.18+, MongoDB 6.0+
+- **Herramientas:** Vite, Jest, ESLint, Prettier
+
+## Preferencias Técnicas
+- **Nomenclatura:** camelCase para variables/métodos, PascalCase para componentes/clases
+- **Estructura:** Arquitectura basada en componentes, separación de lógica/presentación
+- **Patrones:** Hooks personalizados para lógica reutilizable, Context API para estado global limitado
+
+## Estándares de Desarrollo
+- Incluir tests unitarios para toda la lógica de negocio
+- Documentar todas las APIs con JSDoc
+- Implementar manejo de errores consistente con mensajes claros para el usuario
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Este proyecto está licenciado bajo la Licencia MIT.</p>
+            <p><a href="prompts-index.html">Volver al índice de prompts</a> | <a href="../index.html">Volver al inicio</a></p>
+        </div>
+    </footer>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/prompts-es.js"></script>
+    <script src="../js/theme-switcher.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

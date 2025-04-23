@@ -4,24 +4,125 @@
     <meta charset="UTF-8">
     <title>PRD a RFCs - Detalles del Prompt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/highlight-theme.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <!-- Precargar recursos críticos -->
+    <link rel="preload" href="../css/styles.css" as="style">
+    <link rel="preload" href="../css/modal.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
 </head>
 <body>
-    <div class="prompt-details">
-        <h4>Descripción</h4>
-        <p>Este prompt divide el proyecto en documentos RFC (Request for Comments) lógicos y manejables para implementación, organizados en un orden claro que tiene en cuenta dependencias y secuencia lógica de construcción.</p>
-        
-        <h4>Proceso</h4>
-        <ul>
-            <li><strong>Análisis de orden de implementación:</strong> Determina la secuencia óptima de implementación</li>
-            <li><strong>Agrupación de características:</strong> Agrupa características relacionadas que deben implementarse juntas</li>
-            <li><strong>Estructura de RFC:</strong> Proporciona identificador único, título, resumen, enfoque técnico, etc.</li>
-            <li><strong>Consideraciones de implementación:</strong> Destaca desafíos técnicos, casos límite, enfoques de prueba, etc.</li>
-            <li><strong>Creación de prompts de implementación:</strong> Crea prompts de implementación en secuencia numérica estricta</li>
-        </ul>
-        
-        <div class="prompt-filename">
-            <code>prd-to-rfcs-prompt.md</code>
+    <!-- Modal para mostrar el contenido completo del prompt -->
+    <div id="prompt-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="modal-title">PRD a RFCs</h2>
+            <div id="modal-body">
+                <!-- El contenido del prompt se insertará aquí -->
+            </div>
+            <button id="modal-copy" class="copy-button">Copiar al portapapeles</button>
         </div>
     </div>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 style="text-align: center;">PRD a RFCs</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+            <span class="icon-light">☀️</span>
+            <span class="icon-dark">🌙</span>
+        </button>
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="prompts-index.html">Índice de Prompts</a></li>
+                <li><a href="#descripcion">Descripción</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#ejemplo">Ejemplo de Resultado</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="descripcion" class="section">
+            <div class="container">
+                <h2>Descripción</h2>
+                <div class="prompt-details">
+                    <p>Este prompt divide el proyecto en documentos RFC (Request for Comments) lógicos y manejables para implementación, organizados en un orden claro que tiene en cuenta dependencias y secuencia lógica de construcción.</p>
+                    
+                    <div class="action-buttons">
+                        <button class="view-prompt-btn" data-prompt="prd-to-rfcs">Ver Prompt Completo</button>
+                        <button class="copy-prompt-btn" data-prompt="prd-to-rfcs">Copiar Prompt</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proceso" class="section">
+            <div class="container">
+                <h2>Proceso</h2>
+                <div class="prompt-process">
+                    <ul>
+                        <li><strong>Análisis de orden de implementación:</strong> Determina la secuencia óptima de implementación</li>
+                        <li><strong>Agrupación de características:</strong> Agrupa características relacionadas que deben implementarse juntas</li>
+                        <li><strong>Estructura de RFC:</strong> Proporciona identificador único, título, resumen, enfoque técnico, etc.</li>
+                        <li><strong>Consideraciones de implementación:</strong> Destaca desafíos técnicos, casos límite, enfoques de prueba, etc.</li>
+                        <li><strong>Creación de prompts de implementación:</strong> Crea prompts de implementación en secuencia numérica estricta</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="ejemplo" class="section">
+            <div class="container">
+                <h2>Ejemplo de Estructura de RFC</h2>
+                <div class="prompt-example">
+                    <pre><code>
+# RFC-001: Configuración Inicial del Proyecto
+
+## Resumen
+Este RFC establece la estructura base del proyecto, dependencias clave y configuración inicial.
+
+## Características Incluidas
+- F12: Configuración del entorno de desarrollo
+- F13: Sistema de Construcción
+- F14: Estructura de carpetas
+
+## Enfoque Técnico
+El proyecto utilizará una estructura modular basada en características con:
+1. Configuración de TypeScript para tipado estricto
+2. Configuración de linting y formateo con ESLint y Prettier
+3. Configuración inicial de Vite para desarrollo y construcción
+4. Estructura de carpetas que sigue el patrón de arquitectura limpia
+
+## Consideraciones de Implementación
+- Asegurar que la estructura permita pruebas eficientes
+- Configurar alias de importación para mejorar la legibilidad del código
+- Establecer scripts de NPM consistentes para tareas comunes
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Este proyecto está licenciado bajo la Licencia MIT.</p>
+            <p><a href="prompts-index.html">Volver al índice de prompts</a> | <a href="../index.html">Volver al inicio</a></p>
+        </div>
+    </footer>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/prompts-es.js"></script>
+    <script src="../js/theme-switcher.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

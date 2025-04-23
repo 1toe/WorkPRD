@@ -1,38 +1,155 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Plantilla de Implementación - Detalles del Prompt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/highlight-theme.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <!-- Precargar recursos críticos -->
+    <link rel="preload" href="../css/styles.css" as="style">
+    <link rel="preload" href="../css/modal.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
 </head>
+
 <body>
-    <div class="prompt-details">
-        <h4>Descripción</h4>
-        <p>Esta plantilla proporciona una estructura para implementar RFCs individuales, guiando al desarrollador (humano o IA) a través del proceso de implementación.</p>
-        
-        <h4>Enfoque de Implementación en Dos Fases</h4>
-        <ol>
-            <li><strong>Fase 1: Planificación de Implementación</strong>
-                <ul>
-                    <li>Analizar requisitos y código existente</li>
-                    <li>Desarrollar un plan de implementación integral</li>
-                    <li>NO escribir código real durante esta fase</li>
-                    <li>Esperar aprobación explícita del usuario antes de proceder</li>
-                </ul>
-            </li>
-            <li><strong>Fase 2: Ejecución de Implementación</strong>
-                <ul>
-                    <li>Seguir el plan aprobado</li>
-                    <li>Implementar en segmentos lógicos</li>
-                    <li>Explicar enfoque para secciones complejas</li>
-                    <li>Realizar auto-revisión antes de finalizar</li>
-                </ul>
-            </li>
-        </ol>
-        
-        <div class="prompt-filename">
-            <code>implementation-prompt-template.md</code>
+    <!-- Modal para mostrar el contenido completo del prompt -->
+    <div id="prompt-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="modal-title">Plantilla de Implementación</h2>
+            <div id="modal-body">
+                <!-- El contenido del prompt se insertará aquí -->
+            </div>
+            <button id="modal-copy" class="copy-button">Copiar al portapapeles</button>
         </div>
     </div>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 style="text-align: center;">Plantilla de Implementación</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+            <span class="icon-light">☀️</span>
+            <span class="icon-dark">🌙</span>
+        </button>
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="prompts-index.html">Índice de Prompts</a></li>
+                <li><a href="#descripcion">Descripción</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#ejemplo">Ejemplo de Resultado</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="descripcion" class="section">
+            <div class="container">
+                <h2>Descripción</h2>
+                <div class="prompt-details">
+                    <p>Esta plantilla proporciona una estructura para implementar RFCs individuales, guiando al desarrollador (humano o IA) a través del proceso de implementación.</p>
+                    
+                    <div class="action-buttons">
+                        <button class="view-prompt-btn" data-prompt="implementation-template">Ver Prompt Completo</button>
+                        <button class="copy-prompt-btn" data-prompt="implementation-template">Copiar Prompt</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="enfoque" class="section">
+            <div class="container">
+                <h2>Enfoque de Implementación en Dos Fases</h2>
+                <div class="prompt-phases">
+                    <ol>
+                        <li><strong>Fase 1: Planificación de Implementación</strong>
+                            <ul>
+                                <li>Analizar requisitos y código existente</li>
+                                <li>Desarrollar un plan de implementación integral</li>
+                                <li>NO escribir código real durante esta fase</li>
+                                <li>Esperar aprobación explícita del usuario antes de proceder</li>
+                            </ul>
+                        </li>
+                        <li><strong>Fase 2: Ejecución de Implementación</strong>
+                            <ul>
+                                <li>Seguir el plan aprobado</li>
+                                <li>Implementar en segmentos lógicos</li>
+                                <li>Explicar enfoque para secciones complejas</li>
+                                <li>Realizar auto-revisión antes de finalizar</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="ejemplo" class="section">
+            <div class="container">
+                <h2>Ejemplo de Plan de Implementación</h2>
+                <div class="prompt-example">
+                    <pre><code>
+## Plan de Implementación para RFC-001: Configuración Inicial del Proyecto
+
+### 1. Análisis de Requisitos
+El RFC requiere configurar:
+- TypeScript con configuración estricta
+- ESLint y Prettier para formato consistente
+- Estructura de carpetas siguiendo arquitectura limpia
+- Vite como bundler
+
+### 2. Estructura de Archivos a Crear
+```
+/
+├── src/
+│   ├── core/          # Lógica de negocio central
+│   ├── features/      # Características organizadas por funcionalidad
+│   ├── infrastructure/# Servicios, API, almacenamiento
+│   ├── ui/            # Componentes de interfaz de usuario
+│   └── index.tsx      # Punto de entrada
+├── public/
+├── tests/
+├── .eslintrc.js
+├── .prettierrc
+├── tsconfig.json
+├── vite.config.ts
+└── package.json
+```
+
+### 3. Enfoque de Implementación
+1. Inicializar proyecto con Vite
+2. Configurar TypeScript con configuraciones estrictas
+3. Configurar ESLint y Prettier
+4. Crear estructura de carpetas básica
+5. Configurar alias de importación
+6. Añadir scripts NPM útiles
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Este proyecto está licenciado bajo la Licencia MIT.</p>
+            <p><a href="prompts-index.html">Volver al índice de prompts</a> | <a href="../index.html">Volver al inicio</a></p>
+        </div>
+    </footer>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/prompts-es.js"></script>
+    <script src="../js/theme-switcher.js"></script>
+    <script src="../js/main.js"></script>
 </body>
+
 </html>

@@ -1,43 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Verificación Integral de PRD - Detalles del Prompt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/highlight-theme.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <!-- Precargar recursos críticos -->
+    <link rel="preload" href="../css/styles.css" as="style">
+    <link rel="preload" href="../css/modal.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
 </head>
+
 <body>
-    <div class="prompt-details">
-        <h4>Descripción</h4>
-        <p>Este prompt revisa tu PRD existente para identificar brechas, mejorar la claridad y asegurar que esté listo para implementación.</p>
-        
-        <h4>Análisis de Brechas</h4>
-        <p>Identifica elementos faltantes en áreas clave:</p>
-        <ul>
-            <li>Fundamentos del producto</li>
-            <li>Requisitos técnicos</li>
-            <li>Consideraciones de negocio</li>
-            <li>Factores de implementación</li>
-        </ul>
-        
-        <h4>Recomendaciones de Mejora</h4>
-        <p>Proporciona recomendaciones específicas para mejorar:</p>
-        <ul>
-            <li>Estructura y claridad</li>
-            <li>Completitud y viabilidad</li>
-            <li>Priorización e implementación</li>
-        </ul>
-        
-        <h4>Entregables</h4>
-        <ul>
-            <li>Resumen de hallazgos</li>
-            <li>Recomendaciones específicas</li>
-            <li>PRD mejorado</li>
-            <li>Evaluación de calidad</li>
-        </ul>
-        
-        <div class="prompt-filename">
-            <code>prd-comprehensive-verification-prompt.md</code>
+    <!-- Modal para mostrar el contenido completo del prompt -->
+    <div id="prompt-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="modal-title">Verificación Integral de PRD</h2>
+            <div id="modal-body">
+                <!-- El contenido del prompt se insertará aquí -->
+            </div>
+            <button id="modal-copy" class="copy-button">Copiar al portapapeles</button>
         </div>
     </div>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 style="text-align: center;">Verificación Integral de PRD</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+            <span class="icon-light">☀️</span>
+            <span class="icon-dark">🌙</span>
+        </button>
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="prompts-index.html">Índice de Prompts</a></li>
+                <li><a href="#descripcion">Descripción</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#ejemplo">Ejemplo de Resultado</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="descripcion" class="section">
+            <div class="container">
+                <h2>Descripción</h2>
+                <div class="prompt-details">
+                    <p>Este prompt revisa tu PRD existente para identificar brechas, mejorar la claridad y asegurar que esté listo para implementación.</p>
+                    
+                    <div class="action-buttons">
+                        <button class="view-prompt-btn" data-prompt="prd-comprehensive-verification">Ver Prompt Completo</button>
+                        <button class="copy-prompt-btn" data-prompt="prd-comprehensive-verification">Copiar Prompt</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="analisis-brechas" class="section">
+            <div class="container">
+                <h2>Análisis de Brechas</h2>
+                <div class="prompt-sections">
+                    <p>Identifica elementos faltantes en áreas clave:</p>
+                    <ul>
+                        <li>Fundamentos del producto</li>
+                        <li>Requisitos técnicos</li>
+                        <li>Consideraciones de negocio</li>
+                        <li>Factores de implementación</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="recomendaciones" class="section">
+            <div class="container">
+                <h2>Recomendaciones de Mejora</h2>
+                <div class="prompt-process">
+                    <p>Proporciona recomendaciones específicas para mejorar:</p>
+                    <ul>
+                        <li>Estructura y claridad</li>
+                        <li>Completitud y viabilidad</li>
+                        <li>Priorización e implementación</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="entregables" class="section">
+            <div class="container">
+                <h2>Entregables</h2>
+                <div class="prompt-deliverables">
+                    <ul>
+                        <li>Resumen de hallazgos</li>
+                        <li>Recomendaciones específicas</li>
+                        <li>PRD mejorado</li>
+                        <li>Evaluación de calidad</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Este proyecto está licenciado bajo la Licencia MIT.</p>
+            <p><a href="prompts-index.html">Volver al índice de prompts</a> | <a href="../index.html">Volver al inicio</a></p>
+        </div>
+    </footer>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/prompts-es.js"></script>
+    <script src="../js/theme-switcher.js"></script>
+    <script src="../js/main.js"></script>
 </body>
+
 </html>

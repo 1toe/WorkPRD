@@ -1,27 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Extracción de Características de PRD - Detalles del Prompt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/highlight-theme.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <!-- Precargar recursos críticos -->
+    <link rel="preload" href="../css/styles.css" as="style">
+    <link rel="preload" href="../css/modal.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
 </head>
+
 <body>
-    <div class="prompt-details">
-        <h4>Descripción</h4>
-        <p>Este prompt extrae y organiza todas las características descritas en tu PRD, organizándolas por prioridad y categoría para la planificación de implementación.</p>
-        
-        <h4>Proceso</h4>
-        <ul>
-            <li><strong>Identificación de características:</strong> Extrae todas las características explícitas e implícitas mencionadas en el PRD</li>
-            <li><strong>Categorización:</strong> Agrupa características por categorías lógicas</li>
-            <li><strong>Priorización:</strong> Aplica priorización MoSCoW a cada característica</li>
-            <li><strong>Detalle:</strong> Proporciona descripción clara y criterios de aceptación para cada característica</li>
-            <li><strong>Complejidad:</strong> Estima la complejidad relativa de implementación</li>
-        </ul>
-        
-        <div class="prompt-filename">
-            <code>prd-to-features-prompt.md</code>
+    <!-- Modal para mostrar el contenido completo del prompt -->
+    <div id="prompt-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="modal-title">Extracción de Características de PRD</h2>
+            <div id="modal-body">
+                <!-- El contenido del prompt se insertará aquí -->
+            </div>
+            <button id="modal-copy" class="copy-button">Copiar al portapapeles</button>
         </div>
     </div>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 style="text-align: center;">Extracción de Características de PRD</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+            <span class="icon-light">☀️</span>
+            <span class="icon-dark">🌙</span>
+        </button>
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="prompts-index.html">Índice de Prompts</a></li>
+                <li><a href="#descripcion">Descripción</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#ejemplo">Ejemplo de Resultado</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="descripcion" class="section">
+            <div class="container">
+                <h2>Descripción</h2>
+                <div class="prompt-details">
+                    <p>Este prompt extrae y organiza todas las características descritas en tu PRD, organizándolas por
+                        prioridad y categoría para la planificación de implementación.</p>
+
+                    <div class="action-buttons">
+                        <button class="view-prompt-btn" data-prompt="prd-to-features">Ver Prompt Completo</button>
+                        <button class="copy-prompt-btn" data-prompt="prd-to-features">Copiar Prompt</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proceso" class="section">
+            <div class="container">
+                <h2>Proceso</h2>
+                <div class="prompt-process">
+                    <ul>
+                        <li><strong>Identificación de características:</strong> Extrae todas las características
+                            explícitas e implícitas mencionadas en el PRD</li>
+                        <li><strong>Categorización:</strong> Agrupa características por categorías lógicas</li>
+                        <li><strong>Priorización:</strong> Aplica priorización MoSCoW a cada característica
+                            <ul>
+                                <li>Must-have (imprescindible)</li>
+                                <li>Should-have (importante)</li>
+                                <li>Could-have (deseable)</li>
+                                <li>Won't-have (no para esta versión)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Detalle:</strong> Proporciona descripción clara y criterios de aceptación para cada
+                            característica</li>
+                        <li><strong>Complejidad:</strong> Estima la complejidad relativa de implementación</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="ejemplo" class="section">
+            <div class="container">
+                <h2>Ejemplo de Resultado</h2>
+                <div class="prompt-example">
+                    <pre><code>
+# Características del Producto
+
+## Categoría: Auth
+
+### F01: Sistema de Registro de Usuario (MUST)
+**Descripción:** Los usuarios deben poder registrarse en la plataforma.
+**Criterios de Aceptación:** 
+- Formulario de registro con validación 
+- Confirmación por correo electrónico
+- Almacenamiento seguro de credenciales
+**Complejidad:** Media
+
+### F02: Inicio de Sesión (MUST)
+**Descripción:** Los usuarios existentes pueden iniciar sesión.
+**Criterios de Aceptación:** 
+- Soporte para email/contraseña
+- Restablecimiento de contraseña
+- Protección contra ataques de fuerza bruta
+**Complejidad:** Baja
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Este proyecto está licenciado bajo la Licencia MIT.</p>
+            <p><a href="prompts-index.html">Volver al índice de prompts</a> | <a href="../index.html">Volver al
+                    inicio</a></p>
+        </div>
+    </footer>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/prompts-es.js"></script>
+    <script src="../js/theme-switcher.js"></script>
+    <script src="../js/main.js"></script>
 </body>
+
 </html>

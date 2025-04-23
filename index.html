@@ -18,50 +18,29 @@
 </head>
 
 <body>
-    <!-- Modal para mostrar el contenido completo de los prompts -->
-    <div id="prompt-modal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h2 id="modal-title">Título del Prompt</h2>
-            <div id="modal-body">
-                <!-- El contenido del prompt se insertará aquí -->
-            </div>
-            <button id="modal-copy" class="copy-button">Copiar al portapapeles</button>
-        </div>
-    </div>
 
     <header class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="logo-container">
-                    <svg class="logo" width="200" height="200" viewBox="0 0 200 200">
-                        <!-- Placeholder para logo SVG -->
-                        <rect width="200" height="200" fill="#3498db" rx="20"></rect>
-                        <text x="100" y="120" font-size="40" text-anchor="middle" fill="white">PRD</text>
-                    </svg>
-                </div>
                 <div class="hero-text">
-                    <h1>PRD Workflow Tools</h1>
-                    <h2>Desarrollo de Productos Potenciado por IA</h2>
-                    <p>Una colección de prompts reutilizables para optimizar tu flujo de trabajo de desarrollo de
-                        productos</p>
-                    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
-                        <span class="icon-light">☀️</span>
-                        <span class="icon-dark">🌙</span>
-                    </button>
+                    <h1 style="text-align: center;">WorkPRD</h1>
                 </div>
             </div>
         </div>
     </header>
 
     <nav class="main-nav">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+            <span class="icon-light">☀️</span>
+            <span class="icon-dark">🌙</span>
+        </button>
         <div class="container">
             <ul>
-                <li><a href="#introduccion">Introducción</a></li>
-                <li><a href="#beneficios">Beneficios</a></li>
-                <li><a href="#flujo-trabajo">Flujo de Trabajo</a></li>
-                <li><a href="#prompts">Prompts</a></li>
-                <li><a href="#consejos">Consejos</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="views/prompts-index.html">Índice de Prompts</a></li>
+                <li><a href="#descripcion">Descripción</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#ejemplo">Ejemplo de Resultado</a></li>
             </ul>
         </div>
     </nav>
@@ -234,7 +213,8 @@
                     <div class="prompt-card" id="prompt-verification">
                         <h3>Verificación Integral de PRD</h3>
                         <p>Verifica y mejora tu PRD identificando brechas críticas y problemas de calidad</p>
-                        <a href="views/prd-comprehensive-verification-prompt.html" class="prompt-toggle">Ver detalles</a>
+                        <a href="views/prd-comprehensive-verification-prompt.html" class="prompt-toggle">Ver
+                            detalles</a>
                     </div>
 
                     <div class="prompt-card" id="prompt-features">
@@ -270,15 +250,14 @@
             </div>
         </section>
 
-
         <section id="consejos" class="section">
             <div class="container">
                 <h2>Consejos Rápidos</h2>
 
                 <div class="tips-container">
-                    <div class="tip"></div>
+                    <div class="tip">
                         <div class="tip-icon">💡</div>
-                        <p>Proporciona documentos completos cuando sea posible</p>
+                        <p>Responde cualquier pregunta aclaratoria que la IA haga</p>
                     </div>
 
                     <div class="tip">
