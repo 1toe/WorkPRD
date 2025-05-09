@@ -10,12 +10,14 @@ import TarjetaBeneficio from "@/components/ui/TarjetaBeneficio";
 import PasoFlujoTrabajo from "@/components/ui/PasoFlujoTrabajo";
 import TarjetaPrompt from "@/components/ui/TarjetaPrompt";
 import Consejo from "@/components/ui/Consejo";
+import FondoAnimado from "@/components/ui/FondoAnimado";
+import Boton from "@/components/ui/Boton";
+import SeccionTarjetasFlotantes from "@/components/ui/SeccionTarjetasFlotantes";
 
 export default function Home() {
   const [montado, setMontado] = useState(false);
 
   // Asegurarse de que el componente solo se renderiza en el cliente
-  // para evitar errores de hidratación con localStorage
   useEffect(() => {
     setMontado(true);
   }, []);
@@ -138,125 +140,201 @@ export default function Home() {
     "Para proyectos complejos, itera a través de los prompts según sea necesario"
   ];
 
+  const tarjetasDestacadas = [
+    {
+      icono: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+          <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
+        </svg>
+      ),
+      titulo: "Documentación Estructurada",
+      descripcion: "Genera PRDs completos y bien organizados que sirven como base sólida para todo el ciclo de desarrollo",
+      color: "border-primary-500"
+    },
+    {
+      icono: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+        </svg>
+      ),
+      titulo: "Colaboración Mejorada",
+      descripcion: "Facilita la colaboración efectiva entre los equipos humanos y los asistentes de IA para un desarrollo más eficiente",
+      color: "border-secondary-500"
+    },
+    {
+      icono: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+        </svg>
+      ),
+      titulo: "Desarrollo Acelerado",
+      descripcion: "Acelera el proceso de desarrollo con implementaciones más precisas y menos iteraciones correctivas",
+      color: "border-accent-500"
+    }
+  ];
+
   return (
-    <>
-      <Hero 
-        titulo="WorkPRD" 
-        subtitulo="Herramientas de flujo de trabajo para desarrollo de productos con IA"
-      />
-
-      <BotonTema />
+    <main className="min-h-screen bg-light dark:bg-dark text-dark dark:text-light">
+      {/* Fondo animado */}
+      <FondoAnimado />
       
+      {/* Navegación */}
       <Navegacion />
+      
+      {/* Hero */}
+      <div className="pt-28">
+        <Hero 
+          titulo="WorkPRD" 
+          subtitulo="Herramienta de flujo de trabajo para optimizar el desarrollo de productos con asistentes de IA"
+        />
+        
+        <div className="container mx-auto px-6 flex justify-center mt-8">
+          <Boton 
+            href="/views/prompts-index"
+            variante="primario"
+            tamaño="grande"
+            conIcono={
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            }
+            iconoPosicion="derecha"
+          >
+            Explorar Prompts
+          </Boton>
+        </div>
+      </div>
+      
+      {/* Sección de Tarjetas Destacadas */}
+      <SeccionTarjetasFlotantes 
+        titulo="Optimiza tu desarrollo con IA"
+        subtitulo="Conjunto de herramientas diseñadas para mejorar la colaboración entre desarrolladores humanos y asistentes de IA"
+        tarjetas={tarjetasDestacadas}
+        className="mt-20"
+      />
+      
+      {/* Sección de Descripción */}
+      <Seccion 
+        id="descripcion" 
+        titulo="¿Qué es WorkPRD?"
+        subtitulo="Una herramienta para estructurar el desarrollo guiado por IA"
+        esImpar={true}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <TarjetaBeneficio
+            icono="👥"
+            titulo="Mejor Colaboración"
+            beneficios={beneficiosColaboracion}
+            gradientFrom="from-blue-500"
+            gradientTo="to-blue-600"
+          />
+          <TarjetaBeneficio
+            icono="⚙️"
+            titulo="Desarrollo Optimizado"
+            beneficios={beneficiosDesarrollo}
+            gradientFrom="from-secondary-500"
+            gradientTo="to-secondary-600"
+          />
+          <TarjetaBeneficio
+            icono="📊"
+            titulo="Valor Empresarial"
+            beneficios={beneficiosEmpresariales}
+            gradientFrom="from-accent-500"
+            gradientTo="to-accent-600"
+          />
+        </div>
 
-      <main>
-        <Seccion id="introduccion" esImpar={true}>
-          <h2>¿Qué es PRD Workflow Tools?</h2>
-          <p>
-            PRD Workflow Tools es una colección de prompts (instrucciones) diseñados para asistentes de IA que
-            automatizan tareas comunes en el proceso de desarrollo de productos. Estos prompts pueden copiarse y
-            pegarse en cualquier asistente de IA (como Cursor, ChatGPT, Claude, etc.) para mejorar y agilizar tu
-            flujo de trabajo de desarrollo.
-          </p>
-          <p>
-            El enfoque se basa en la metodología de desarrollo impulsada por PRD (Product Requirements Document)
-            y RFC (Request for Comments), que proporciona una estructura clara y eficiente para la colaboración
-            entre humanos y asistentes de IA.
-          </p>
-        </Seccion>
-
-        <Seccion id="beneficios">
-          <h2>Beneficios del Desarrollo basado en PRD y RFC</h2>
-
-          <div className="benefits-grid">
-            <TarjetaBeneficio 
-              icono="🤖" 
-              titulo="Colaboración Mejorada con IA"
-              beneficios={beneficiosColaboracion}
-            />
-            
-            <TarjetaBeneficio 
-              icono="⚙️" 
-              titulo="Proceso de Desarrollo Mejorado"
-              beneficios={beneficiosDesarrollo}
-            />
-            
-            <TarjetaBeneficio 
-              icono="💼" 
-              titulo="Beneficios Empresariales"
-              beneficios={beneficiosEmpresariales}
-            />
-            
-            <TarjetaBeneficio 
-              icono="🧠" 
-              titulo="Ventajas Específicas para IA"
-              beneficios={beneficiosIA}
-            />
-          </div>
-        </Seccion>
-
-        <Seccion id="flujo-trabajo" esImpar={true}>
-          <h2>Flujo de Trabajo Recomendado</h2>
-
+        <div className="mt-10">
+          <Consejo 
+            texto="Los PRDs completos sirven como referencia continua durante todo el ciclo de desarrollo, asegurando que todas las partes interesadas tengan el mismo entendimiento de los objetivos del proyecto." 
+            tipo="info"
+          />
+        </div>
+      </Seccion>
+      
+      {/* Sección de Proceso */}
+      <Seccion 
+        id="proceso" 
+        titulo="Flujo de Trabajo PRD"
+        subtitulo="Estructuración de proyectos complejos en pasos manejables"
+      >
+        <div className="mt-12 max-w-3xl mx-auto">
           <div className="workflow-diagram">
-            {pasosFlujoTrabajo.map((paso) => (
-              <PasoFlujoTrabajo 
-                key={paso.numero}
+            {pasosFlujoTrabajo.map((paso, index) => (
+              <PasoFlujoTrabajo
+                key={index}
                 numero={paso.numero}
                 titulo={paso.titulo}
                 descripcion={paso.descripcion}
+                delay={index * 150}
               />
             ))}
           </div>
+        </div>
 
-          <div className="workflow-change-management">
-            <h3>Gestión de Cambios</h3>
-            <p>Cuando surgen nuevos requisitos o cambios durante el desarrollo:</p>
-            <ol>
-              <li>
-                <strong>Analizar Cambios</strong> - Usa el prompt de Gestión de Cambios para evaluar el
-                impacto y la estrategia de integración
-              </li>
-              <li>
-                <strong>Actualizar Documentos</strong> - Revisa el PRD, características, reglas y RFCs
-                afectados según el análisis
-              </li>
-              <li>
-                <strong>Continuar Implementación</strong> - Reanuda el desarrollo con la documentación
-                actualizada
-              </li>
-            </ol>
-          </div>
-        </Seccion>
-
-        <Seccion id="prompts">
-          <h2>Prompts Disponibles</h2>
-
-          <div className="prompts-grid">
-            {promptsDisponibles.map((prompt) => (
-              <TarjetaPrompt
-                key={prompt.id}
-                id={prompt.id}
-                titulo={prompt.titulo}
-                descripcion={prompt.descripcion}
-                ruta={prompt.ruta}
-              />
-            ))}
-          </div>
-        </Seccion>
-
-        <Seccion id="consejos" esImpar={true}>
-          <h2>Consejos Rápidos</h2>
-
-          <div className="tips-container">
-            {consejos.map((consejo, index) => (
-              <Consejo key={index} texto={consejo} />
-            ))}
-          </div>
-        </Seccion>
-      </main>
-
+        <div className="mt-10 flex justify-center">
+          <Boton
+            href="/views/prompts-index"
+            variante="secundario"
+            tamaño="grande"
+            conIcono={
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              </svg>
+            }
+          >
+            Comenzar a Usar
+          </Boton>
+        </div>
+      </Seccion>
+      
+      {/* Sección de Prompts */}
+      <Seccion 
+        id="prompts" 
+        titulo="Prompts Disponibles"
+        subtitulo="Herramientas para cada fase del desarrollo de productos"
+        esImpar={true}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          {promptsDisponibles.map((prompt) => (
+            <TarjetaPrompt
+              key={prompt.id}
+              id={prompt.id}
+              titulo={prompt.titulo}
+              descripcion={prompt.descripcion}
+              ruta={prompt.ruta}
+              categoria="PRD"
+            />
+          ))}
+        </div>
+        
+        <div className="mt-8 text-center">
+          <Boton
+            href="/views/prompts-index"
+            variante="terciario"
+            tamaño="mediano"
+            conIcono={
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+              </svg>
+            }
+          >
+            Ver todos los prompts
+          </Boton>
+        </div>
+        
+        <div className="mt-10">
+          <Consejo 
+            texto="Usa el prompt de verificación completa periódicamente durante el desarrollo para asegurar que la implementación sigue alineada con los requisitos originales."
+            tipo="advertencia"
+            esDesechable={true}
+          />
+        </div>
+      </Seccion>
+      
+      {/* Pie de página */}
       <Pie />
-    </>
+    </main>
   );
 }
