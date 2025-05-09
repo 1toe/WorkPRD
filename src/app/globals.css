@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Colores principales */
+  --color-primary: #3498db;
+  --color-secondary: #2ecc71;
+  --color-accent: #e74c3c;
+  --color-dark: #2c3e50;
+  --color-light: #ecf0f1;
+  
+  /* Colores de texto */
+  --text-dark: #333333;
+  --text-medium: #555555;
+  --text-light: #ffffff;
+  
+  /* Colores de fondo */
+  --bg-light: #ffffff;
+  --bg-alt: #f5f7fa;
+  --bg-dark: #2c3e50;
+  
+  /* Espaciado */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Fuentes */
+  --font-primary: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 2rem;
+  
+  /* Bordes */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  
+  /* Sombras */
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --box-shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.2);
+  
+  /* Transiciones */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Ancho del contenedor */
+  --container-width: 1200px;
+}
+
+[data-theme="dark"] {
+  --color-primary: #4dabf7;
+  --color-secondary: #51cf66;
+  --color-accent: #ff6b6b;
+  
+  --text-dark: #e9ecef;
+  --text-medium: #ced4da;
+  --text-light: #f8f9fa;
+  
+  --bg-light: #212529;
+  --bg-alt: #343a40;
+  --bg-dark: #1a1d20;
+  
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --box-shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+@layer components {
+  /* Estilos base */
+  body {
+    @apply font-primary text-md text-dark bg-alt;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-primary font-bold mb-md;
+  }
+  
+  h1 {
+    @apply text-xxl;
+  }
+  
+  h2 {
+    @apply text-xl;
+  }
+  
+  h3 {
+    @apply text-lg;
+  }
+  
+  p {
+    @apply mb-md;
+  }
+  
+  a {
+    @apply text-primary hover:text-accent transition-fast;
+  }
+  
+  /* Contenedor */
+  .container {
+    @apply mx-auto w-full max-w-[--container-width] px-md;
+  }
+  
+  /* Hero */
+  .hero {
+    @apply bg-dark text-light py-xl;
+  }
+  
+  .hero-content {
+    @apply flex flex-col items-center justify-center;
+  }
+  
+  /* Navegación */
+  .main-nav {
+    @apply bg-dark text-light sticky top-0 z-10 mb-lg;
+  }
+  
+  .main-nav ul {
+    @apply flex flex-wrap justify-center py-md;
+  }
+  
+  .main-nav li {
+    @apply mx-md;
+  }
+  
+  .main-nav a {
+    @apply text-light relative pb-xs;
+  }
+  
+  .main-nav a::after {
+    @apply content-[''] absolute left-0 bottom-0 w-0 h-[2px] bg-secondary transition-slow;
+  }
+  
+  .main-nav a:hover::after {
+    @apply w-full;
+  }
+  
+  /* Secciones */
+  .section {
+    @apply py-xl;
+  }
+  
+  .section:nth-child(even) {
+    @apply bg-light;
+  }
+  
+  /* Tarjetas de beneficios */
+  .benefits-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-lg mt-lg;
+  }
+  
+  .benefit-card {
+    @apply bg-light p-lg rounded-md shadow hover:shadow-hover transition-slow;
+  }
+  
+  .benefit-icon {
+    @apply text-xxl mb-md text-center;
+  }
+  
+  /* Diagrama de flujo de trabajo */
+  .workflow-diagram {
+    @apply mt-xl;
+  }
+  
+  .workflow-step {
+    @apply flex mb-lg relative;
+  }
+  
+  /* Tarjetas de prompts */
+  .prompts-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-lg mt-lg;
+  }
+  
+  .prompt-card {
+    @apply bg-light p-lg rounded-md shadow hover:shadow-hover transition-slow;
+  }
+  
+  /* Consejos */
+  .tips-container {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md mt-lg;
+  }
+  
+  .tip {
+    @apply bg-light rounded-md p-md shadow flex items-center;
+  }
+  
+  .tip-icon {
+    @apply text-xl mr-md text-primary;
+  }
+  
+  /* Pie de página */
+  footer {
+    @apply bg-dark text-light py-xl text-center;
+  }
+  
+  /* Botón de cambio de tema */
+  .theme-toggle {
+    @apply absolute top-md right-md bg-transparent border-0 text-lg text-light p-xs flex items-center justify-center z-10;
+  }
+}
