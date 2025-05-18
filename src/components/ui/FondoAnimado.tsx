@@ -41,8 +41,9 @@ const FondoAnimado = () => {
       color: string;
       
       constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+        // Usamos ! para asegurar a TypeScript que canvas no es nulo en este contexto
+        this.x = Math.random() * canvas!.width;
+        this.y = Math.random() * canvas!.height;
         this.tamaño = Math.random() * 5 + 1;
         this.velocidadX = Math.random() * 2 - 1;
         this.velocidadY = Math.random() * 2 - 1;
@@ -54,11 +55,11 @@ const FondoAnimado = () => {
         this.y += this.velocidadY;
         
         // Rebote en los bordes
-        if (this.x > canvas.width || this.x < 0) {
+        if (this.x > canvas!.width || this.x < 0) {
           this.velocidadX = -this.velocidadX;
         }
         
-        if (this.y > canvas.height || this.y < 0) {
+        if (this.y > canvas!.height || this.y < 0) {
           this.velocidadY = -this.velocidadY;
         }
       }
