@@ -1,35 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useContext } from 'react';
+import { TemaContexto } from '@/context/TemaContexto';
 
-/**
- * Hook para manejar el tema de la aplicación (claro/oscuro)
- */
 export const useTheme = () => {
-  const [tema, setTema] = useState<"light" | "dark">("light");
-
-  useEffect(() => {
-    // Recuperar tema guardado o usar preferencia del sistema
-    const temaGuardado = localStorage.getItem("theme") as "light" | "dark" | null;
-    
-    if (temaGuardado) {
-      setTema(temaGuardado);
-    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTema("dark");
-    }
-  }, []);
-
-  useEffect(() => {
-    // Aplicar tema al documento
-    document.documentElement.setAttribute("data-theme", tema);
-    // Guardar tema en localStorage
-    localStorage.setItem("theme", tema);
-  }, [tema]);
-
-  // Función para alternar entre temas
-  const alternarTema = () => {
-    setTema(temaActual => temaActual === "light" ? "dark" : "light");
+  const context = useContext(TemaContexto);
+  
+  if (context === undefined) {
+    throw new Error('useTheme debe ser usado dentro de un TemaProveedor');
+  }
+  
+  return {
+    tema: context.tema,
+    cambiarTema: context.cambiarTema
   };
-
-  return { tema, alternarTema };
 };

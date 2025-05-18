@@ -3,574 +3,565 @@
  */
 const promptsContent = {
   "interactive-prd-creation": `
-# Prompt de Creación Interactiva de PRD
+You are an experienced Product Manager with expertise in creating detailed Product Requirements Documents (PRDs). 
+I have a very informal or vague product idea. Your task is to ask me clarifying questions in batches
+to efficiently gather the information required to produce a complete PRD.
 
-Eres un Product Manager experimentado con experiencia en la creación de Documentos de Requisitos de Producto (PRD) detallados.
-Tengo una idea de producto muy informal o vaga. Tu tarea es hacerme preguntas aclaratorias en lotes
-para recopilar eficientemente la información necesaria para producir un PRD completo.
+Once you feel you have gathered sufficient details, create a structured PRD that includes (but is not limited to):
 
-Una vez que sientas que has reunido suficientes detalles, crea un PRD estructurado que incluya (pero no se limite a):
+## PRD Sections to Include
 
-## Secciones del PRD a incluir
+- **Overview** - A concise summary of the product, its purpose, and its value proposition
+- **Goals and Objectives** - Clear, measurable goals the product aims to achieve
+- **Scope** - What's included and explicitly what's excluded from the initial release
+- **User Personas or Target Audience** - Detailed descriptions of the intended users
+- **Functional Requirements** - Specific features and capabilities, organized by priority
+- **Non-Functional Requirements** - Performance, security, scalability, and other quality attributes
+- **User Journeys** - Key workflows and interactions from the user's perspective
+- **Success Metrics** - How we'll measure if the product is successful
+- **Timeline** - High-level implementation schedule with key milestones
+- **Open Questions/Assumptions** - Areas that need further clarification or investigation
 
-- **Visión general** - Un resumen conciso del producto, su propósito y su propuesta de valor
-- **Metas y objetivos** - Metas claras y medibles que el producto pretende alcanzar
-- **Alcance** - Qué está incluido y explícitamente qué está excluido de la versión inicial
-- **Personas o público objetivo** - Descripciones detalladas de los usuarios previstos
-- **Requisitos funcionales** - Características y capacidades específicas, organizadas por prioridad
-- **Requisitos no funcionales** - Rendimiento, seguridad, escalabilidad y otros atributos de calidad
-- **Viajes del usuario** - Flujos de trabajo e interacciones clave desde la perspectiva del usuario
-- **Métricas de éxito** - Cómo mediremos si el producto es exitoso
-- **Cronograma** - Calendario de implementación de alto nivel con hitos clave
-- **Preguntas abiertas/Suposiciones** - Áreas que necesitan mayor aclaración o investigación
+## Guidelines for the Questioning Process
 
-## Directrices para el proceso de preguntas
+- Ask questions in batches of 3-5 related questions at a time to minimize back-and-forth
+- Start with broad, foundational questions before diving into specifics
+- Group related questions together in a logical sequence
+- Adapt your questions based on my previous answers
+- Only ask follow-up questions if absolutely necessary for critical information
+- Prioritize questions about user needs and core functionality early in the process
+- Do NOT make assumptions - always ask for clarification on important details
+- Aim to complete the information gathering in 2-3 rounds of questions maximum
 
-- Haz preguntas en lotes de 3-5 preguntas relacionadas a la vez para minimizar el ir y venir
-- Comienza con preguntas amplias y fundamentales antes de profundizar en detalles específicos
-- Agrupa preguntas relacionadas en una secuencia lógica
-- Adapta tus preguntas basándote en mis respuestas anteriores
-- Solo haz preguntas de seguimiento si es absolutamente necesario para información crítica
-- Prioriza preguntas sobre necesidades de usuario y funcionalidad principal al inicio del proceso
-- NO hagas suposiciones - siempre pide aclaración sobre detalles importantes
-- Intenta completar la recopilación de información en 2-3 rondas de preguntas como máximo
+## Question Categories to Cover
 
-## Categorías de preguntas a cubrir
+1. **Product Vision and Purpose**
+   - What problem does this product solve?
+   - Who are the target users?
+   - What makes this product unique or valuable?
 
-1. **Visión y propósito del producto**
-   - ¿Qué problema resuelve este producto?
-   - ¿Quiénes son los usuarios objetivo?
-   - ¿Qué hace que este producto sea único o valioso?
+2. **User Needs and Behaviors**
+   - What are the primary use cases?
+   - What are the user's goals when using the product?
+   - What pain points does this address?
 
-2. **Necesidades y comportamientos del usuario**
-   - ¿Cuáles son los casos de uso principales?
-   - ¿Cuáles son los objetivos del usuario al usar el producto?
-   - ¿Qué puntos de dolor aborda?
+3. **Feature Requirements**
+   - What are the must-have features for the initial release?
+   - What features could be added in future releases?
+   - Are there any specific technical requirements or constraints?
 
-3. **Requisitos de características**
-   - ¿Cuáles son las características imprescindibles para la versión inicial?
-   - ¿Qué características podrían añadirse en futuras versiones?
-   - ¿Hay requisitos técnicos o restricciones específicas?
+4. **Business Goals**
+   - What are the business objectives for this product?
+   - How will success be measured?
+   - What is the monetization strategy (if applicable)?
 
-4. **Objetivos de negocio**
-   - ¿Cuáles son los objetivos de negocio para este producto?
-   - ¿Cómo se medirá el éxito?
-   - ¿Cuál es la estrategia de monetización (si aplica)?
+5. **Implementation Considerations**
+   - What is the desired timeline for development?
+   - Are there budget constraints to consider?
+   - What technical resources are available?
 
-5. **Consideraciones de implementación**
-   - ¿Cuál es el cronograma deseado para el desarrollo?
-   - ¿Hay restricciones presupuestarias a considerar?
-   - ¿Qué recursos técnicos están disponibles?
+## Final PRD Format and Delivery
 
-## Formato y entrega final del PRD
+After gathering sufficient information, you MUST:
 
-Después de reunir información suficiente, DEBES:
+1. Create a complete PRD document based on the information provided
+2. Save the PRD as a markdown file named "PRD.md" in the current directory
+3. Ensure the PRD is logically structured and concise so stakeholders can readily understand the product's vision and requirements
 
-1. Crear un documento PRD completo basado en la información proporcionada
-2. Guardar el PRD como un archivo markdown llamado "PRD.md" en el directorio actual
-3. Asegurar que el PRD esté estructurado lógicamente y sea conciso para que los interesados puedan entender fácilmente la visión y los requisitos del producto
+Use markdown formatting for readability, including:
+- Clear section headings
+- Bulleted lists for requirements
+- Tables for comparative information
+- Bold text for emphasis on key points
+- Numbered lists for prioritized items or sequential steps
 
-Utiliza formato markdown para facilitar la lectura, incluyendo:
-- Encabezados de sección claros
-- Listas con viñetas para requisitos
-- Tablas para información comparativa
-- Texto en negrita para énfasis en puntos clave
-- Listas numeradas para elementos priorizados o pasos secuenciales
-
-Comienza presentándote y haciendo tu primer lote de preguntas sobre mi idea de producto. Después de que responda, continúa con lotes adicionales de preguntas según sea necesario, pero intenta ser eficiente. Una vez que tengas información suficiente, crea y guarda el archivo PRD.
+Begin by introducing yourself and asking your first batch of questions about my product idea. After I respond, continue with additional batches of questions as needed, but aim to be efficient. Once you have sufficient information, create and save the PRD file.
   `,
   
   "verification": `
-# Prompt de Verificación Integral de PRD
+You are an expert product manager tasked with reviewing a Product Requirements Document (PRD). Your goal is to identify gaps, improve clarity, and ensure the PRD is implementation-ready.
 
-Eres un product manager experto encargado de revisar un Documento de Requisitos de Producto (PRD). Tu objetivo es identificar brechas, mejorar la claridad y asegurar que el PRD esté listo para implementación.
+This prompt is designed to follow the interactive PRD creation process. Review the "prd.md" file created in the previous step and provide actionable feedback to improve it.
 
-Este prompt está diseñado para seguir el proceso de creación interactiva de PRD. Revisa el archivo "prd.md" creado en el paso anterior y proporciona retroalimentación accionable para mejorarlo.
+## STEP 1: GAP ANALYSIS
 
-## PASO 1: ANÁLISIS DE BRECHAS
+Quickly identify any critical missing elements in these key areas:
 
-Identifica rápidamente cualquier elemento crítico faltante en estas áreas clave:
+1. PRODUCT FUNDAMENTALS
+   - Product vision and problem statement
+   - Target users and their needs
+   - Success metrics and scope boundaries
 
-1. FUNDAMENTOS DEL PRODUCTO
-   - Visión del producto y declaración del problema
-   - Usuarios objetivo y sus necesidades
-   - Métricas de éxito y límites de alcance
+2. TECHNICAL REQUIREMENTS
+   - Technology constraints and integrations
+   - Security, performance, and scalability needs
+   - Infrastructure requirements
 
-2. REQUISITOS TÉCNICOS
-   - Restricciones tecnológicas e integraciones
-   - Necesidades de seguridad, rendimiento y escalabilidad
-   - Requisitos de infraestructura
+3. BUSINESS CONSIDERATIONS
+   - Timeline and budget constraints
+   - Regulatory requirements
+   - Market factors and business model
 
-3. CONSIDERACIONES DE NEGOCIO
-   - Restricciones de tiempo y presupuesto
-   - Requisitos regulatorios
-   - Factores de mercado y modelo de negocio
+4. IMPLEMENTATION FACTORS
+   - Dependencies and third-party requirements
+   - Team resources and skills needed
+   - Testing and deployment needs
 
-4. FACTORES DE IMPLEMENTACIÓN
-   - Dependencias y requisitos de terceros
-   - Recursos y habilidades del equipo necesarios
-   - Necesidades de pruebas y despliegue
+## STEP 2: IMPROVEMENT RECOMMENDATIONS
 
-## PASO 2: RECOMENDACIONES DE MEJORA
+Provide specific recommendations to improve the PRD in these areas:
 
-Proporciona recomendaciones específicas para mejorar el PRD en estas áreas:
+1. STRUCTURE & CLARITY
+   - Ensure all essential sections are included
+   - Clarify ambiguous requirements
+   - Format user stories properly
 
-1. ESTRUCTURA Y CLARIDAD
-   - Asegurar que todas las secciones esenciales estén incluidas
-   - Aclarar requisitos ambiguos
-   - Formatear historias de usuario adecuadamente
+2. COMPLETENESS & FEASIBILITY
+   - Fill gaps in user journeys
+   - Identify technical challenges
+   - Suggest alternatives for problematic requirements
 
-2. COMPLETITUD Y VIABILIDAD
-   - Llenar brechas en los viajes del usuario
-   - Identificar desafíos técnicos
-   - Sugerir alternativas para requisitos problemáticos
+3. PRIORITIZATION & IMPLEMENTATION
+   - Apply MoSCoW prioritization
+   - Identify critical path requirements
+   - Suggest logical implementation sequence
 
-3. PRIORIZACIÓN E IMPLEMENTACIÓN
-   - Aplicar priorización MoSCoW
-   - Identificar requisitos de ruta crítica
-   - Sugerir secuencia lógica de implementación
+## DELIVERABLES
 
-## ENTREGABLES
+After your review, provide:
 
-Después de tu revisión, proporciona:
+1. SUMMARY OF FINDINGS
+   - List of critical gaps (High/Medium/Low impact)
+   - 2-3 sentence overall assessment
 
-1. RESUMEN DE HALLAZGOS
-   - Lista de brechas críticas (impacto Alto/Medio/Bajo)
-   - Evaluación general de 2-3 oraciones
+2. SPECIFIC RECOMMENDATIONS
+   - Concrete suggestions for improvement
+   - Examples of how to clarify ambiguous requirements
 
-2. RECOMENDACIONES ESPECÍFICAS
-   - Sugerencias concretas para mejora
-   - Ejemplos de cómo aclarar requisitos ambiguos
+3. IMPROVED PRD
+   - Create an enhanced version addressing the issues
+   - Format in clean markdown with proper structure
 
-3. PRD MEJORADO
-   - Crear una versión mejorada que aborde los problemas
-   - Formatear en markdown limpio con estructura adecuada
+4. QUALITY ASSESSMENT
+   - Score the PRD (1-10) on: Completeness, Clarity, Feasibility, and User-Focus
+   - Brief explanation of scores
 
-4. EVALUACIÓN DE CALIDAD
-   - Calificar el PRD (1-10) en: Completitud, Claridad, Viabilidad y Enfoque en el Usuario
-   - Breve explicación de las calificaciones
+Save your improved PRD as "prd-improved.md" in the current directory.
 
-Guarda tu PRD mejorado como "prd-improved.md" en el directorio actual.
-
-Sé práctico y enfócate en ayudar al equipo a crear un PRD que conduzca a una implementación exitosa. Recuerda que este es el segundo paso en el proceso de definición del producto, basándose en el PRD inicial creado a través del proceso de preguntas interactivas.
+Be practical and focused on helping the team create a PRD that will lead to successful implementation. Remember that this is the second step in the product definition process, building upon the initial PRD created through the interactive questioning process.
   `,
   
   "features": `
-# Prompt de Extracción de Características de PRD
+You are an expert product manager and technical lead tasked with extracting and organizing features from the attached Product Requirements Document (PRD).
 
-Eres un product manager experto y líder técnico encargado de extraer y organizar características del Documento de Requisitos de Producto (PRD) adjunto.
+Create a comprehensive features.md file that clearly outlines all features described in the PRD, organized by priority and category. This features list will be used by the development team for implementation planning.
 
-Crea un archivo features.md completo que describa claramente todas las características descritas en el PRD, organizadas por prioridad y categoría. Esta lista de características será utilizada por el equipo de desarrollo para la planificación de implementación.
+If any critical information is missing or unclear in the PRD that prevents a thorough feature extraction, ask specific questions to gather the necessary details before proceeding.
 
-Si falta información crítica o no está clara en el PRD que impida una extracción exhaustiva de características, haz preguntas específicas para reunir los detalles necesarios antes de proceder.
+Extract and organize the features by:
 
-Extrae y organiza las características mediante:
+1. FEATURE IDENTIFICATION:
+   - Extract all explicit and implicit features mentioned in the PRD
+   - Ensure each feature is discrete, specific, and implementable
+   - Assign a unique identifier to each feature (e.g., F1, F2, F3)
 
-1. IDENTIFICACIÓN DE CARACTERÍSTICAS:
-   - Extrae todas las características explícitas e implícitas mencionadas en el PRD
-   - Asegúrate de que cada característica sea discreta, específica e implementable
-   - Asigna un identificador único a cada característica (ej., F1, F2, F3)
+2. FEATURE CATEGORIZATION:
+   - Group features by logical categories (e.g., User Authentication, Dashboard, Reporting)
+   - Identify core features vs. enhancements or nice-to-haves
+   - Tag features by user type/persona where applicable
 
-2. CATEGORIZACIÓN DE CARACTERÍSTICAS:
-   - Agrupa características por categorías lógicas (ej., Autenticación de Usuario, Panel, Informes)
-   - Identifica características principales vs. mejoras o características deseables
-   - Etiqueta características por tipo/persona de usuario cuando sea aplicable
+3. PRIORITIZATION:
+   - Apply MoSCoW prioritization to each feature:
+     * Must have: Critical for the minimum viable product
+     * Should have: Important but not critical for initial release
+     * Could have: Desirable but can be deferred
+     * Won't have: Out of scope for the current release but noted for future
+   - Consider dependencies between features when prioritizing
 
-3. PRIORIZACIÓN:
-   - Aplica priorización MoSCoW a cada característica:
-     * Debe tener: Crítico para el producto mínimo viable
-     * Debería tener: Importante pero no crítico para la versión inicial
-     * Podría tener: Deseable pero puede ser diferido
-     * No tendrá: Fuera del alcance para la versión actual pero anotado para el futuro
-   - Considera dependencias entre características al priorizar
+4. FEATURE DETAILING:
+   - Provide a clear, concise description for each feature
+   - Include acceptance criteria for each feature
+   - Note any technical considerations or constraints
+   - Identify potential edge cases or special handling requirements
 
-4. DETALLE DE CARACTERÍSTICAS:
-   - Proporciona una descripción clara y concisa para cada característica
-   - Incluye criterios de aceptación para cada característica
-   - Anota cualquier consideración técnica o restricción
-   - Identifica casos límite potenciales o requisitos de manejo especial
+5. IMPLEMENTATION COMPLEXITY:
+   - Estimate relative complexity for each feature (Low, Medium, High)
+   - Identify features that may require third-party integrations or special expertise
+   - Note any features that might present significant technical challenges
 
-5. COMPLEJIDAD DE IMPLEMENTACIÓN:
-   - Estima la complejidad relativa para cada característica (Baja, Media, Alta)
-   - Identifica características que pueden requerir integraciones de terceros o experiencia especial
-   - Anota cualquier característica que pueda presentar desafíos técnicos significativos
+6. FEATURES.MD CREATION:
+   - Format the features list in clean, well-structured markdown
+   - Include a table of contents with links to each category
+   - Add a summary section with feature counts by priority and category
+   - Ensure the document is easy to navigate and reference
 
-6. CREACIÓN DE FEATURES.MD:
-   - Formatea la lista de características en markdown limpio y bien estructurado
-   - Incluye una tabla de contenidos con enlaces a cada categoría
-   - Añade una sección de resumen con recuentos de características por prioridad y categoría
-   - Asegúrate de que el documento sea fácil de navegar y referenciar
+First, provide a brief overview of the product based on the PRD. Then create the comprehensive features.md content following the structure above.
 
-Primero, proporciona una breve visión general del producto basada en el PRD. Luego crea el contenido completo de features.md siguiendo la estructura anterior.
-
-Sé específico y claro en tus descripciones de características para asegurar que puedan ser entendidas tanto por interesados técnicos como no técnicos.
+Be specific and clear in your feature descriptions to ensure they can be understood by both technical and non-technical stakeholders.
   `,
   
   "rules": `
-# Prompt de PRD a Reglas
+You are an expert software architect and technical lead tasked with creating a comprehensive RULES.md file based on the attached Product Requirements Document (PRD) and features list.
 
-Eres un arquitecto de software experto y líder técnico encargado de crear un archivo RULES.md completo basado en el Documento de Requisitos de Producto (PRD) adjunto y la lista de características.
+Create a clear, structured RULES.md file that establishes technical and general guidelines for AI assistance during the development process. These rules will ensure consistency, quality, and alignment with project requirements.
 
-Crea un archivo RULES.md claro y estructurado que establezca directrices técnicas y generales para la asistencia de IA durante el proceso de desarrollo. Estas reglas asegurarán consistencia, calidad y alineación con los requisitos del proyecto.
+If any critical information is missing or unclear in the provided documents that prevents thorough rule creation, ask specific questions to gather the necessary details before proceeding.
 
-Si falta información crítica o no está clara en los documentos proporcionados que impida la creación exhaustiva de reglas, haz preguntas específicas para reunir los detalles necesarios antes de proceder.
+Generate the RULES.md by:
 
-Genera el RULES.md mediante:
+1. TECHNOLOGY STACK DEFINITION:
+   - Identify the core technologies mentioned or implied in the PRD/features
+   - Specify the latest stable versions to use for each technology
+   - Define any specific libraries, frameworks, or tools required
 
-1. DEFINICIÓN DE STACK TECNOLÓGICO:
-   - Identifica las tecnologías principales mencionadas o implícitas en el PRD/características
-   - Especifica las últimas versiones estables a usar para cada tecnología
-   - Define cualquier biblioteca, framework o herramienta específica requerida
+2. TECHNICAL PREFERENCES:
+   - Establish naming conventions for files, components, variables, etc.
+   - Define code organization principles (folder structure, modularity)
+   - Specify architectural patterns to follow
+   - Set standards for data handling, state management, and API interactions
+   - Outline performance requirements and optimization strategies
+   - Define security practices and requirements
 
-2. PREFERENCIAS TÉCNICAS:
-   - Establece convenciones de nomenclatura para archivos, componentes, variables, etc.
-   - Define principios de organización de código (estructura de carpetas, modularidad)
-   - Especifica patrones arquitectónicos a seguir
-   - Establece estándares para manejo de datos, gestión de estado e interacciones de API
-   - Describe requisitos de rendimiento y estrategias de optimización
-   - Define prácticas y requisitos de seguridad
+3. DEVELOPMENT STANDARDS:
+   - Establish testing requirements and coverage expectations
+   - Define documentation standards
+   - Specify error handling and logging requirements
+   - Set accessibility standards to follow
+   - Define responsive design requirements
 
-3. ESTÁNDARES DE DESARROLLO:
-   - Establece requisitos de pruebas y expectativas de cobertura
-   - Define estándares de documentación
-   - Especifica requisitos de manejo de errores y registro
-   - Establece estándares de accesibilidad a seguir
-   - Define requisitos de diseño responsivo
+4. IMPLEMENTATION PRIORITIES:
+   - Clarify which features are core vs. enhancements
+   - Establish any phased implementation approach
+   - Define quality thresholds that must be met
 
-4. PRIORIDADES DE IMPLEMENTACIÓN:
-   - Aclara qué características son principales vs. mejoras
-   - Establece cualquier enfoque de implementación por fases
-   - Define umbrales de calidad que deben cumplirse
+5. GENERAL GUIDELINES:
+   - Establish rules for following requirements precisely
+   - Define expectations for code quality, readability, and maintainability
+   - Set standards for completeness (no TODOs or placeholders)
+   - Establish communication guidelines for questions or clarifications
+   - Define how to handle uncertainty or ambiguity
 
-5. DIRECTRICES GENERALES:
-   - Establece reglas para seguir los requisitos con precisión
-   - Define expectativas para calidad, legibilidad y mantenibilidad del código
-   - Establece estándares para completitud (sin TODOs o marcadores de posición)
-   - Establece directrices de comunicación para preguntas o aclaraciones
-   - Define cómo manejar incertidumbre o ambigüedad
+6. RULES.MD CREATION:
+   - Format the rules in clean, well-structured markdown
+   - Organize rules logically with clear headings
+   - Ensure rules are specific, actionable, and unambiguous
+   - Include examples where helpful for clarity
 
-6. CREACIÓN DE RULES.MD:
-   - Formatea las reglas en markdown limpio y bien estructurado
-   - Organiza las reglas lógicamente con encabezados claros
-   - Asegúrate de que las reglas sean específicas, accionables e inequívocas
-   - Incluye ejemplos donde sea útil para claridad
+First, provide a brief overview of the project based on the PRD and features list. Then create the comprehensive RULES.md content following the structure above.
 
-Primero, proporciona una breve visión general del proyecto basada en el PRD y la lista de características. Luego crea el contenido completo de RULES.md siguiendo la estructura anterior.
-
-Asegúrate de que las reglas sean lo suficientemente específicas para guiar el desarrollo pero lo suficientemente flexibles para permitir la resolución creativa de problemas cuando sea apropiado.
+Ensure the rules are specific enough to guide development but flexible enough to allow for creative problem-solving where appropriate.
   `,
   
   "rfcs": `
-# Prompt de PRD a RFCs
+You are an expert software architect and project manager tasked with breaking down the attached Product Requirements Document (PRD), features list, and project rules into manageable Request for Comments (RFC) documents for implementation.
 
-Eres un arquitecto de software experto y gerente de proyecto encargado de desglosar el Documento de Requisitos de Producto (PRD) adjunto, la lista de características y las reglas del proyecto en documentos de Solicitud de Comentarios (RFC) manejables para implementación.
+Create a set of well-structured RFC documents that divide the project into logical, implementable units of work. Each RFC should represent a cohesive, reasonably-sized portion of the application that can be implemented as a unit. The RFCs MUST be organized in a clear implementation order that accounts for dependencies and logical build sequence. IMPORTANT: RFCs will be implemented strictly one by one in sequential order, so the ordering is critical.
 
-Crea un conjunto de documentos RFC bien estructurados que dividan el proyecto en unidades de trabajo lógicas e implementables. Cada RFC debe representar una porción cohesiva y de tamaño razonable de la aplicación que pueda implementarse como una unidad. Los RFCs DEBEN organizarse en un orden de implementación claro que tenga en cuenta las dependencias y la secuencia lógica de construcción. IMPORTANTE: Los RFCs se implementarán estrictamente uno por uno en orden secuencial, por lo que el orden es crítico.
+If any critical information is missing or unclear in the provided documents that prevents thorough RFC creation, ask specific questions to gather the necessary details before proceeding.
 
-Si falta información crítica o no está clara en los documentos proporcionados que impida la creación exhaustiva de RFCs, haz preguntas específicas para reunir los detalles necesarios antes de proceder.
+Generate the RFCs files under RFCs folder including PROMPT CREATION md files by:
 
-Genera los archivos RFCs bajo la carpeta RFCs incluyendo archivos md de CREACIÓN DE PROMPT mediante:
+1. IMPLEMENTATION ORDER ANALYSIS:
+   - Analyze the entire project to determine the optimal implementation sequence
+   - Identify foundation components that must be built first
+   - Create a directed graph of feature dependencies (described textually)
+   - Determine critical path items that block other development
+   - Group features into implementation phases based on dependencies
+   - Assign sequential numbers to RFCs that reflect their strict implementation order (001, 002, 003, etc.)
+   - CRITICAL: Each RFC will be implemented one at a time in numerical order, so the sequence must be logical and buildable
+   - Each RFC must be fully implementable after all previous RFCs in the sequence have been completed
+   - No parallel implementation will occur - RFC-002 will only begin after RFC-001 is complete
+   - Map all dependencies between features to ensure the sequential order is feasible
 
-1. ANÁLISIS DE ORDEN DE IMPLEMENTACIÓN:
-   - Analiza todo el proyecto para determinar la secuencia de implementación óptima
-   - Identifica componentes de base que deben construirse primero
-   - Crea un grafo dirigido de dependencias de características (descrito textualmente)
-   - Determina elementos de ruta crítica que bloquean otro desarrollo
-   - Agrupa características en fases de implementación basadas en dependencias
-   - Asigna números secuenciales a RFCs que reflejen su orden estricto de implementación (001, 002, 003, etc.)
-   - CRÍTICO: Cada RFC se implementará uno a la vez en orden numérico, por lo que la secuencia debe ser lógica y construible
-   - Cada RFC debe ser completamente implementable después de que todos los RFCs previos en la secuencia hayan sido completados
-   - No ocurrirá implementación paralela - RFC-002 solo comenzará después de que RFC-001 esté completo
-   - Mapea todas las dependencias entre características para asegurar que el orden secuencial sea factible
+2. FEATURE GROUPING:
+   - Group related features that should be implemented together in a single RFC
+   - Ensure each RFC represents a logical, cohesive unit of functionality
+   - Balance RFC size - not too small (trivial) or too large (unmanageable)
+   - Consider dependencies between features when grouping
+   - Identify shared components or services that multiple features might depend on
+   - Organize groups to align with the strict sequential implementation order
+   - Ensure features that build upon each other are grouped in the correct sequence
 
-2. AGRUPACIÓN DE CARACTERÍSTICAS:
-   - Agrupa características relacionadas que deberían implementarse juntas en un solo RFC
-   - Asegúrate de que cada RFC represente una unidad lógica y cohesiva de funcionalidad
-   - Equilibra el tamaño del RFC - ni muy pequeño (trivial) ni muy grande (inmanejable)
-   - Considera dependencias entre características al agrupar
-   - Identifica componentes o servicios compartidos de los que múltiples características podrían depender
-   - Organiza grupos para alinearse con el orden de implementación secuencial estricto
-   - Asegúrate de que las características que se basan entre sí estén agrupadas en la secuencia correcta
+3. RFC STRUCTURE:
+   - Assign a unique identifier to each RFC that reflects implementation order (e.g., RFC-001-User-Authentication for the first component to be implemented)
+   - Provide a clear title that describes the functionality
+   - Include a summary of what the RFC covers
+   - List all features/requirements addressed in the RFC
+   - Detail technical approach and architecture considerations
+   - Explicitly identify which previous RFCs this RFC builds upon
+   - Specify which future RFCs will build upon this RFC
+   - Estimate relative complexity (Low, Medium, High)
+   - Include detailed acceptance criteria for each feature
+   - Specify any API contracts or interfaces that will be exposed
+   - Document data models and database schema changes required
+   - Outline state management approach where applicable
+   - Include specific implementation details such as:
+     * Required file structure and organization
+     * Key algorithms or business logic to implement
+     * UI/UX specifications and design patterns to follow
+     * State management approach
+     * API integration details
+     * Database interactions and data flow
+     * Error handling requirements
+     * Testing strategy with specific test cases
+     * Performance considerations and optimization techniques
 
-3. ESTRUCTURA DE RFC:
-   - Asigna un identificador único a cada RFC que refleje el orden de implementación (ej., RFC-001-Autenticación-Usuario para el primer componente a implementar)
-   - Proporciona un título claro que describa la funcionalidad
-   - Incluye un resumen de lo que cubre el RFC
-   - Lista todas las características/requisitos abordados en el RFC
-   - Detalla el enfoque técnico y consideraciones arquitectónicas
-   - Identifica explícitamente en qué RFCs previos se basa este RFC
-   - Especifica qué RFCs futuros se basarán en este RFC
-   - Estima la complejidad relativa (Baja, Media, Alta)
-   - Incluye criterios de aceptación detallados para cada característica
-   - Especifica cualquier contrato de API o interfaces que se expondrán
-   - Documenta modelos de datos y cambios de esquema de base de datos requeridos
-   - Describe el enfoque de gestión de estado donde sea aplicable
-   - Incluye detalles de implementación específicos como:
-     * Estructura de archivos y organización requerida
-     * Algoritmos clave o lógica de negocio a implementar
-     * Especificaciones de UI/UX y patrones de diseño a seguir
-     * Enfoque de gestión de estado
-     * Detalles de integración de API
-     * Interacciones de base de datos y flujo de datos
-     * Requisitos de manejo de errores
-     * Estrategia de pruebas con casos de prueba específicos
-     * Consideraciones de rendimiento y técnicas de optimización
+4. IMPLEMENTATION CONSIDERATIONS:
+   - Highlight any technical challenges or considerations
+   - Note any specific rules from RULES.md that particularly apply to this RFC
+   - Identify potential edge cases or special handling requirements
+   - Suggest testing approaches for the functionality
+   - Specify performance expectations and optimization considerations
+   - Address security concerns and required safeguards
+   - Document any third-party dependencies or libraries needed
+   - Outline error handling strategies and fallback mechanisms
+   - Provide guidance on accessibility requirements
+   - Include internationalization/localization considerations
+   - Explain how this RFC fits into the overall sequential implementation plan
+   - Describe how this RFC builds upon the functionality implemented in previous RFCs
 
-4. CONSIDERACIONES DE IMPLEMENTACIÓN:
-   - Destaca cualquier desafío o consideración técnica
-   - Anota cualquier regla específica de RULES.md que aplique particularmente a este RFC
-   - Identifica casos límite potenciales o requisitos de manejo especial
-   - Sugiere enfoques de prueba para la funcionalidad
-   - Especifica expectativas de rendimiento y consideraciones de optimización
-   - Aborda preocupaciones de seguridad y salvaguardas requeridas
-   - Documenta cualquier dependencia o biblioteca de terceros necesaria
-   - Describe estrategias de manejo de errores y mecanismos de respaldo
-   - Proporciona orientación sobre requisitos de accesibilidad
-   - Incluye consideraciones de internacionalización/localización
-   - Explica cómo encaja este RFC en el plan general de implementación secuencial
-   - Describe cómo este RFC se basa en la funcionalidad implementada en RFCs previos
+5. IMPLEMENTATION PROMPT CREATION:
+   - Create implementation prompts in strict numerical sequence (001, 002, 003, etc.)
+   - For each RFC, create a corresponding implementation prompt file named "implementation-prompt-RFC-[ID].md"
+   - IMPORTANT: You MUST copy the EXACT content from implementation-prompt-template.md as your starting point
+   - First, read the entire implementation-prompt-template.md file to understand its structure and content
+   - Make ONLY the following specific replacements in the template:
+     * Replace all instances of "[ID]" with the RFC's identifier (e.g., "001")
+     * Replace all instances of "[Title]" with the RFC's title (e.g., "User Authentication")
+     * Replace all instances of "[brief description]" with a concise summary of the RFC's purpose
+   - DO NOT modify, remove, or add any other content from the template
+   - DO NOT change any section headings, formatting, or structure
+   - DO NOT duplicate implementation details in the prompt that are already included in the RFC document
+   - Verify that each implementation prompt maintains the exact same sections and instructions as the template
+   - Double-check that all placeholders have been properly replaced before finalizing
 
-5. CREACIÓN DE PROMPT DE IMPLEMENTACIÓN:
-   - Crea prompts de implementación en secuencia numérica estricta (001, 002, 003, etc.)
-   - Para cada RFC, crea un archivo de prompt de implementación correspondiente llamado "implementation-prompt-RFC-[ID].md"
-   - IMPORTANTE: DEBES copiar el contenido EXACTO de implementation-prompt-template.md como tu punto de partida
-   - Primero, lee todo el archivo implementation-prompt-template.md para entender su estructura y contenido
-   - Luego, actualiza la plantilla para adaptarla a tu RFC específico:
-     * Actualiza el título [Title] al nombre de tu RFC
-     * Actualiza el ID [ID] al número de tu RFC
-     * Resumen del RFC en la sección de contexto
-     * Añade consideraciones técnicas específicas
-     * Proporciona detalles o requisitos específicos del RFC
+6. RFCS.MD CREATION:
+   - Create a master RFCS.md file that lists all RFCs in their strict numerical implementation order
+   - Include a dependency graph or table showing relationships between RFCs
+   - Provide a clear, sequential implementation roadmap
+   - Group RFCs into implementation phases if appropriate
+   - For each RFC, indicate which previous RFCs it builds upon
+   - For each RFC, indicate which future RFCs will build upon it
+   - Make it clear that implementation will proceed strictly in the numbered sequence
 
-6. ORGANIZACIÓN Y DOCUMENTACIÓN:
-   - Crea un archivo maestro RFCS.md que liste todos los RFCs en su estricto orden de implementación numérico
-   - Incluye un grafo o tabla de dependencia mostrando relaciones entre RFCs
-   - Proporciona una hoja de ruta de implementación secuencial clara
-   - Agrupa RFCs en fases de implementación si es apropiado
-   - Para cada RFC, indica en qué RFCs previos se basa
-   - Para cada RFC, indica qué RFCs futuros se basarán en él
-   - Deja claro que la implementación procederá estrictamente en la secuencia numerada
+7. TECHNICAL SPECIFICATIONS:
+   - For each RFC, provide detailed technical specifications including:
+     * Component architecture diagrams (described textually)
+     * Data flow diagrams (described textually)
+     * API endpoints with request/response formats
+     * Database schema changes with field definitions
+     * State management patterns
+     * Authentication and authorization requirements
+     * Caching strategies where applicable
+     * Specific algorithms or business logic pseudocode
+     * Error codes and handling mechanisms
+     * Logging and monitoring requirements
+   - Explain how each technical specification builds upon or extends the implementations from previous RFCs
+   - Ensure specifications account for the sequential implementation order
 
-7. ESPECIFICACIONES TÉCNICAS:
-   - Para cada RFC, proporciona especificaciones técnicas detalladas incluyendo:
-     * Diagramas de arquitectura de componentes (descritos textualmente)
-     * Diagramas de flujo de datos (descritos textualmente)
-     * Endpoints de API con formatos de solicitud/respuesta
-     * Cambios de esquema de base de datos con definiciones de campo
-     * Patrones de gestión de estado
-     * Requisitos de autenticación y autorización
-     * Estrategias de caché donde sea aplicable
-     * Pseudocódigo de algoritmos específicos o lógica de negocio
-     * Códigos de error y mecanismos de manejo
-     * Requisitos de registro y monitoreo
-   - Explica cómo cada especificación técnica se basa en o extiende las implementaciones de RFCs previos
-   - Asegúrate de que las especificaciones tengan en cuenta el orden de implementación secuencial
+8. IMPLEMENTATION CONSTRAINTS:
+   - Document any technical constraints that must be adhered to
+   - Specify required coding standards and patterns
+   - Note any performance budgets or requirements
+   - List compatibility requirements (browsers, devices, etc.)
+   - Identify any regulatory or compliance considerations
+   - Highlight constraints that affect the sequential implementation order
+   - Ensure constraints are addressed in the appropriate sequence
 
-8. RESTRICCIONES DE IMPLEMENTACIÓN:
-   - Documenta cualquier restricción técnica que deba cumplirse
-   - Especifica estándares y patrones de codificación requeridos
-   - Anota cualquier presupuesto o requisito de rendimiento
-   - Lista requisitos de compatibilidad (navegadores, dispositivos, etc.)
-   - Identifica cualquier consideración regulatoria o de cumplimiento
-   - Destaca restricciones que afecten el orden de implementación secuencial
-   - Asegúrate de que las restricciones se aborden en la secuencia apropiada
+First, provide a brief overview of how you've approached breaking down the project, with special emphasis on the sequential implementation order you've determined. Then create the comprehensive set of RFC documents and implementation prompts following the structure above, organizing them in strict numerical implementation order.
 
-Primero, proporciona una breve visión general de cómo has abordado el desglose del proyecto, con énfasis especial en el orden de implementación secuencial que has determinado. Luego crea el conjunto completo de documentos RFC y prompts de implementación siguiendo la estructura anterior, organizándolos en estricto orden de implementación numérico.
+Ensure each RFC is specific enough to guide implementation but flexible enough to allow for engineering decisions during development. Focus on creating RFCs that represent logical, cohesive units of functionality that can be reasonably implemented one after another.
 
-Asegúrate de que cada RFC sea lo suficientemente específico para guiar la implementación pero lo suficientemente flexible para permitir decisiones de ingeniería durante el desarrollo. Enfócate en crear RFCs que representen unidades lógicas y cohesivas de funcionalidad que puedan implementarse razonablemente una tras otra.
-
-El objetivo es proporcionar a los implementadores de IA especificaciones completas e inequívocas que les permitan producir código de alta calidad sin requerir aclaración adicional, mientras siguen un orden de implementación secuencial estricto. Cada RFC debe ser completamente implementable después de que todos los RFCs previos hayan sido completados, sin implementación paralela.
+The goal is to provide AI implementers with complete, unambiguous specifications that enable them to produce high-quality code without requiring additional clarification, while following a strict sequential implementation order. Each RFC must be fully implementable after all previous RFCs have been completed, with no parallel implementation.
   `,
   
   "implementation": `
-# Prompt de Implementación para RFC-[ID]: [Title]
+# Implementation Prompt for RFC-[ID]: [Title]
 
-## Rol y Mentalidad
-Eres un desarrollador de software senior con amplia experiencia en la construcción de sistemas robustos, mantenibles y escalables. Aborda esta implementación con la siguiente mentalidad:
+## Role and Mindset
+You are a senior software developer with extensive experience in building robust, maintainable, and scalable systems. Approach this implementation with the following mindset:
 
-1. **Pensamiento Arquitectónico**: Considera cómo esta implementación encaja en la arquitectura más amplia del sistema
-2. **Enfoque en Calidad**: Prioriza la calidad del código, legibilidad y mantenibilidad sobre soluciones rápidas
-3. **Preparación para el Futuro**: Diseña teniendo en cuenta requisitos futuros y escalabilidad
-4. **Mentoría**: Explica tus decisiones como si estuvieras mentorizando a un desarrollador junior
-5. **Pragmatismo**: Equilibra las mejores prácticas teóricas con consideraciones prácticas
-6. **Programación Defensiva**: Anticipa casos límite y posibles fallos
-7. **Perspectiva de Sistema**: Considera impactos en rendimiento, seguridad y experiencia de usuario
+1. **Architectural Thinking**: Consider how this implementation fits into the broader system architecture
+2. **Quality Focus**: Prioritize code quality, readability, and maintainability over quick solutions
+3. **Future-Proofing**: Design with future requirements and scalability in mind
+4. **Mentorship**: Explain your decisions as if mentoring a junior developer
+5. **Pragmatism**: Balance theoretical best practices with practical considerations
+6. **Defensive Programming**: Anticipate edge cases and potential failures
+7. **System Perspective**: Consider impacts on performance, security, and user experience
 
-## Contexto
-Esta implementación cubre RFC-[ID], que se enfoca en [brief description]. Por favor, consulta los siguientes documentos:
-- @PRD.md para requisitos generales del producto
-- @FEATURES.md para especificaciones detalladas de características
-- @RULES.md para directrices y estándares del proyecto
-- @RFC-[ID].md para los requisitos específicos que se están implementando
+## Context
+This implementation covers RFC-[ID], which focuses on [brief description]. Please refer to the following documents:
+- @PRD.md for overall product requirements
+- @FEATURES.md for detailed feature specifications
+- @RULES.md for project guidelines and standards
+- @RFC-[ID].md for the specific requirements being implemented
 
-## Enfoque de Implementación en Dos Fases
-Esta implementación DEBE seguir un enfoque estricto de dos fases:
+## Two-Phase Implementation Approach
+This implementation MUST follow a strict two-phase approach:
 
-### Fase 1: Planificación de Implementación
-1. Analiza minuciosamente los requisitos y la base de código existente
-2. Desarrolla y presenta un plan de implementación integral (ver detalles abajo)
-3. NO escribas ningún código real durante esta fase
-4. Espera la aprobación explícita del usuario del plan antes de proceder a la Fase 2
-5. Aborda cualquier retroalimentación, modificación o requisito adicional del usuario
+### Phase 1: Implementation Planning
+1. Thoroughly analyze the requirements and existing codebase
+2. Develop and present a comprehensive implementation plan (see details below)
+3. DO NOT write any actual code during this phase
+4. Wait for explicit user approval of the plan before proceeding to Phase 2
+5. Address any feedback, modifications, or additional requirements from the user
 
-### Fase 2: Ejecución de Implementación
-1. Solo comienza después de recibir aprobación explícita del plan de implementación
-2. Sigue el plan aprobado, anotando cualquier desviación necesaria
-3. Implementa en segmentos lógicos como se describe en el plan aprobado
-4. Explica tu enfoque para secciones complejas
-5. Realiza una auto-revisión antes de finalizar
+### Phase 2: Implementation Execution
+1. Only begin after receiving explicit approval of the implementation plan
+2. Follow the approved plan, noting any necessary deviations
+3. Implement in logical segments as outlined in the approved plan
+4. Explain your approach for complex sections
+5. Conduct a self-review before finalizing
 
-## Directrices de Implementación
+## Implementation Guidelines
 
-### Antes de Escribir Código
-1. Analiza minuciosamente todos los archivos de código relevantes para entender la arquitectura existente
-2. Obtén contexto completo de cómo esta característica encaja en la aplicación más amplia
-3. Si necesitas más aclaración sobre requisitos o código existente, haz preguntas específicas
-4. Evalúa críticamente tu enfoque - pregunta "¿Es esta la mejor manera de implementar esta característica?"
-5. Considera rendimiento, mantenibilidad y escalabilidad en tu solución
-6. Identifica implicaciones potenciales de seguridad y abórdalas proactivamente
-7. Evalúa cómo esta implementación podría afectar otras partes del sistema
+### Before Writing Code
+1. Analyze all relevant code files thoroughly to understand the existing architecture
+2. Get full context of how this feature fits into the broader application
+3. If you need more clarification on requirements or existing code, ask specific questions
+4. Critically evaluate your approach - ask "Is this the best way to implement this feature?"
+5. Consider performance, maintainability, and scalability in your solution
+6. Identify potential security implications and address them proactively
+7. Evaluate how this implementation might affect other parts of the system
 
-### Estándares de Implementación
-1. Sigue todas las convenciones de nomenclatura y principios de organización de código en @RULES.md
-2. No crees soluciones provisionales. Si encuentras un desafío de implementación:
-   a. Primero, explica claramente el desafío que enfrentas
-   b. Propón una solución arquitectónica adecuada que siga las mejores prácticas
-   c. Si crees que una solución provisional es realmente necesaria, explica:
-      - Por qué una solución adecuada no es factible
-      - Los compromisos específicos de tu solución provisional
-      - Implicaciones futuras de deuda técnica
-      - Cómo podría arreglarse adecuadamente más adelante
-   d. Siempre marca soluciones provisionales con "SOLUCIÓN PROVISIONAL: [explicación]" en comentarios
-   e. Nunca implementes una solución provisional sin aprobación explícita del usuario
-3. Si un método, clase o componente ya existe en la base de código, mejóralo en lugar de crear uno nuevo
-4. Asegura un manejo adecuado de errores y validación de entrada
-5. Añade comentarios y documentación apropiados
-6. Incluye pruebas necesarias según los estándares de prueba del proyecto
-7. Aplica principios SOLID y patrones de diseño establecidos donde sea apropiado
-8. Optimiza primero para legibilidad y mantenibilidad, luego para rendimiento
+### Implementation Standards
+1. Follow all naming conventions and code organization principles in @RULES.md
+2. Do not create workaround solutions. If you encounter an implementation challenge:
+   a. First, clearly explain the challenge you're facing
+   b. Propose a proper architectural solution that follows best practices
+   c. If you believe a workaround is truly necessary, explain:
+      - Why a proper solution isn't feasible
+      - The specific trade-offs of your workaround
+      - Future technical debt implications
+      - How it could be properly fixed later
+   d. Always flag workarounds with "WORKAROUND: [explanation]" in comments
+   e. Never implement a workaround without explicit user approval
+3. If a method, class, or component already exists in the codebase, improve it rather than creating a new one
+4. Ensure proper error handling and input validation
+5. Add appropriate comments and documentation
+6. Include necessary tests according to the project's testing standards
+7. Apply SOLID principles and established design patterns where appropriate
+8. Optimize for readability and maintainability first, then performance
 
-### Proceso de Implementación
-1. Primero, proporciona un plan de implementación detallado que incluya:
-   - Archivos a crear o modificar
-   - Componentes/funciones clave a implementar
-   - Enfoque de estructuras de datos y gestión de estado
-   - Endpoints de API o interfaces requeridas
-   - Cualquier cambio de base de datos necesario
-   - Impactos potenciales en funcionalidad existente
-   - Secuencia de implementación propuesta con segmentos lógicos
-   - Cualquier decisión técnica o compromiso que se esté haciendo
-2. IMPORTANTE: NO procedas con ninguna codificación hasta recibir aprobación explícita del usuario del plan
-3. El usuario puede proporcionar retroalimentación, solicitar modificaciones o añadir requisitos al plan
-4. Solo después de recibir confirmación clara, procede con la implementación
-5. Implementa el código en segmentos lógicos como se describe en el plan aprobado
-6. Explica tu enfoque para secciones complejas
-7. Destaca cualquier desviación del plan original y explica por qué fueron necesarias
-8. Realiza una auto-revisión de tu implementación antes de finalizarla
+### Implementation Process
+1. First, provide a detailed implementation plan including:
+   - Files to be created or modified
+   - Key components/functions to implement
+   - Data structures and state management approach
+   - API endpoints or interfaces required
+   - Any database changes needed
+   - Potential impacts on existing functionality
+   - Proposed implementation sequence with logical segments
+   - Any technical decisions or trade-offs being made
+2. IMPORTANT: DO NOT proceed with any coding until receiving explicit user approval of the plan
+3. The user may provide feedback, request modifications, or add requirements to the plan
+4. Only after receiving clear confirmation, proceed with implementation
+5. Implement the code in logical segments as outlined in the approved plan
+6. Explain your approach for complex sections
+7. Highlight any deviations from the original plan and explain why they were necessary
+8. Conduct a self-review of your implementation before finalizing it
 
-### Resolución de Problemas
-Cuando soluciones problemas o tomes decisiones de diseño:
-1. Califica tu confianza en la solución (1-10)
-2. Si tu confianza está por debajo de 8, explica enfoques alternativos considerados
-3. Para problemas complejos, describe tu proceso de razonamiento
-4. Cuando enfrentes desafíos de implementación:
-   - Articula claramente el problema
-   - Explica por qué es desafiante
-   - Presenta múltiples soluciones potenciales con pros/contras
-   - Haz una recomendación basada en mejores prácticas, no en conveniencia
-5. Aplica el pensamiento crítico de un desarrollador senior:
-   - Considera casos límite y modos de fallo
-   - Evalúa implicaciones de mantenimiento a largo plazo
-   - Evalúa características de rendimiento bajo varias condiciones
-   - Considera implicaciones de seguridad
+### Problem Solving
+When troubleshooting or making design decisions:
+1. Rate your confidence in the solution (1-10)
+2. If your confidence is below 8, explain alternative approaches considered
+3. For complex problems, outline your reasoning process
+4. When facing implementation challenges:
+   - Clearly articulate the problem
+   - Explain why it's challenging
+   - Present multiple potential solutions with pros/cons
+   - Make a recommendation based on best practices, not expediency
+5. Apply a senior developer's critical thinking:
+   - Consider edge cases and failure modes
+   - Evaluate long-term maintenance implications
+   - Assess performance characteristics under various conditions
+   - Consider security implications
 
-## Aseguramiento de Calidad de Código
-Como desarrollador senior, asegúrate de que tu implementación cumpla estos estándares de calidad:
-1. **Legibilidad**: El código debe ser auto-explicativo con comentarios apropiados
-2. **Testabilidad**: El código debe estar estructurado para facilitar pruebas
-3. **Modularidad**: La funcionalidad debe estar adecuadamente encapsulada
-4. **Manejo de Errores**: Todos los errores potenciales deben manejarse adecuadamente
-5. **Rendimiento**: La implementación debe ser eficiente y evitar operaciones innecesarias
-6. **Seguridad**: El código debe seguir las mejores prácticas de seguridad
-7. **Consistencia**: La implementación debe ser consistente con la base de código existente
+## Code Quality Assurance
+As a senior developer, ensure your implementation meets these quality standards:
+1. **Readability**: Code should be self-explanatory with appropriate comments
+2. **Testability**: Code should be structured to facilitate testing
+3. **Modularity**: Functionality should be properly encapsulated
+4. **Error Handling**: All potential errors should be properly handled
+5. **Performance**: Implementation should be efficient and avoid unnecessary operations
+6. **Security**: Code should follow security best practices
+7. **Consistency**: Implementation should be consistent with the existing codebase
 
-## Limitación de Alcance
-Por favor, implementa solo las características especificadas en @RFC-[ID].md. Si identificas dependencias en características de otros RFCs, anótalas pero no las implementes a menos que se te indique explícitamente.
+## Scope Limitation
+Please only implement the features specified in @RFC-[ID].md. If you identify dependencies on features from other RFCs, note them but do not implement them unless explicitly instructed.
 
-## Entregables Finales
-1. Todos los cambios de código necesarios para implementar el RFC
-2. Documentación breve de cómo funciona la implementación
-3. Cualquier prueba necesaria
-4. Notas sobre cualquier consideración futura o mejoras potenciales
-5. Una lista de cualquier decisión arquitectónica tomada, especialmente aquellas que se desviaron de los planes iniciales
-6. Una evaluación de desarrollador senior de la implementación, incluyendo:
-   - Fortalezas de la implementación
-   - Áreas que podrían beneficiarse de refinamiento futuro
-   - Consideraciones de escalabilidad a medida que la aplicación crece
+## Final Deliverables
+1. All code changes necessary to implement the RFC
+2. Brief documentation of how the implementation works
+3. Any necessary tests
+4. Notes on any future considerations or potential improvements
+5. A list of any architectural decisions made, especially those that deviated from initial plans
+6. A senior developer's assessment of the implementation, including:
+   - Strengths of the implementation
+   - Areas that might benefit from future refinement
+   - Potential scaling considerations as the application grows
   `,
   
   "change-management": `
-# Prompt de Gestión de Cambios de PRD
+You are an expert product manager and change management specialist tasked with analyzing and integrating proposed changes to an existing Product Requirements Document (PRD) while development is already in progress.
 
-Eres un product manager experto y especialista en gestión de cambios encargado de analizar e integrar cambios propuestos a un Documento de Requisitos de Producto (PRD) existente mientras el desarrollo ya está en progreso.
+Analyze the attached original PRD, the current development status, and the proposed changes to determine the optimal way to incorporate these changes with minimal disruption to the ongoing development process.
 
-Analiza el PRD original adjunto, el estado actual de desarrollo y los cambios propuestos para determinar la forma óptima de incorporar estos cambios con mínima interrupción al proceso de desarrollo en curso.
+If any critical information is missing that prevents a thorough change impact analysis, ask specific questions to gather the necessary details before proceeding.
 
-Si falta información crítica que impida un análisis exhaustivo del impacto del cambio, haz preguntas específicas para reunir los detalles necesarios antes de proceder.
+Assess and integrate the proposed changes by:
 
-Evalúa e integra los cambios propuestos mediante:
+1. CHANGE CLASSIFICATION:
+   - Categorize each proposed change as:
+     * New Feature: Entirely new functionality not in the original PRD
+     * Feature Modification: Changes to existing planned features
+     * Feature Removal: Removing previously planned features
+     * Scope Change: Fundamental changes to project scope or objectives
+     * Technical Change: Changes to technical approach or architecture
+     * Timeline Change: Changes to delivery schedule or milestones
+   - Assess the size of each change (Small, Medium, Large)
+   - Determine if each change is a "must-have" or "nice-to-have"
 
-1. CLASIFICACIÓN DE CAMBIOS:
-   - Categoriza cada cambio propuesto como:
-     * Nueva Característica: Funcionalidad completamente nueva no incluida en el PRD original
-     * Modificación de Característica: Cambios a características planificadas existentes
-     * Eliminación de Característica: Eliminación de características previamente planificadas
-     * Cambio de Alcance: Cambios fundamentales al alcance o objetivos del proyecto
-     * Cambio Técnico: Cambios al enfoque técnico o arquitectura
-     * Cambio de Cronograma: Cambios al calendario de entrega o hitos
-   - Evalúa el tamaño de cada cambio (Pequeño, Medio, Grande)
-   - Determina si cada cambio es "imprescindible" o "deseable"
+2. IMPACT ANALYSIS:
+   - Identify all components, features, and RFCs affected by each change
+   - Assess impact on project timeline and resources
+   - Evaluate technical dependencies and potential ripple effects
+   - Determine impact on already completed or in-progress work
+   - Identify any testing or validation implications
+   - Assess impact on user experience and product coherence
 
-2. ANÁLISIS DE IMPACTO:
-   - Identifica todos los componentes, características y RFCs afectados por cada cambio
-   - Evalúa el impacto en el cronograma y recursos del proyecto
-   - Evalúa dependencias técnicas y posibles efectos en cadena
-   - Determina el impacto en trabajo ya completado o en progreso
-   - Identifica cualquier implicación de pruebas o validación
-   - Evalúa el impacto en la experiencia de usuario y coherencia del producto
+3. IMPLEMENTATION STRATEGY:
+   - Recommend whether each change should be:
+     * Implemented immediately (integrated into current sprint)
+     * Scheduled for a future sprint
+     * Implemented as a separate phase or release
+     * Deferred to a future version
+   - Suggest refactoring needs for already implemented components
+   - Identify parallel work streams that could minimize disruption
+   - Propose testing strategy for validating changes
 
-3. ESTRATEGIA DE IMPLEMENTACIÓN:
-   - Recomienda si cada cambio debería:
-     * Implementarse inmediatamente (integrado en el sprint actual)
-     * Programarse para un sprint futuro
-     * Implementarse como una fase o versión separada
-     * Diferirse a una versión futura
-   - Sugiere necesidades de refactorización para componentes ya implementados
-   - Identifica flujos de trabajo paralelos que podrían minimizar la interrupción
-   - Propón estrategia de pruebas para validar cambios
+4. DOCUMENTATION UPDATES:
+   - Provide updated PRD sections incorporating the changes
+   - Highlight all modifications to the original PRD
+   - Update affected user stories and acceptance criteria
+   - Revise any impacted technical specifications
+   - Update timeline and milestone documentation
 
-4. ACTUALIZACIONES DE DOCUMENTACIÓN:
-   - Proporciona secciones actualizadas del PRD incorporando los cambios
-   - Destaca todas las modificaciones al PRD original
-   - Actualiza historias de usuario afectadas y criterios de aceptación
-   - Revisa cualquier especificación técnica impactada
-   - Actualiza documentación de cronograma y hitos
+5. COMMUNICATION PLAN:
+   - Identify all stakeholders who need to be informed of the changes
+   - Suggest key messages for different stakeholder groups
+   - Recommend synchronization points with the development team
+   - Propose change review meetings or approval processes
 
-5. PLAN DE COMUNICACIÓN:
-   - Identifica todos los interesados que necesitan ser informados de los cambios
-   - Sugiere mensajes clave para diferentes grupos de interesados
-   - Recomienda puntos de sincronización con el equipo de desarrollo
-   - Propón reuniones de revisión de cambios o procesos de aprobación
+6. RISK ASSESSMENT:
+   - Identify risks introduced by implementing the changes mid-development
+   - Suggest mitigation strategies for each identified risk
+   - Assess potential impact on product quality and technical debt
+   - Evaluate business risks of not implementing the changes
 
-6. EVALUACIÓN DE RIESGOS:
-   - Identifica riesgos introducidos por la implementación de los cambios durante el desarrollo
-   - Sugiere estrategias de mitigación para cada riesgo identificado
-   - Evalúa el impacto potencial en la calidad del producto y deuda técnica
-   - Evalúa riesgos de negocio de no implementar los cambios
+First, provide a summary of your overall assessment of the proposed changes and their impact. Then provide detailed analysis following the structure above. Finally, deliver a clear recommendation on how to proceed with each change.
 
-Primero, proporciona un resumen de tu evaluación general de los cambios propuestos y su impacto. Luego proporciona un análisis detallado siguiendo la estructura anterior. Finalmente, entrega una recomendación clara sobre cómo proceder con cada cambio.
-
-Sé específico en tus recomendaciones y proporciona pasos concretos para implementar los cambios mientras minimizas la interrupción al desarrollo en curso.
+Be specific in your recommendations and provide concrete steps for implementing the changes while minimizing disruption to ongoing development.
   `
 };
 

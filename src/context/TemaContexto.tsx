@@ -1,68 +1,54 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useState, useEffect, ReactNode } from 'react';
 
-type Tema = "light" | "dark";
-
-interface ContextoTema {
-  tema: Tema;
-  alternarTema: () => void;
+interface TemaContextoProps {
+  tema: 'claro' | 'oscuro';
+  cambiarTema: () => void;
 }
 
-const TemaContexto = createContext<ContextoTema | undefined>(undefined);
+export const TemaContexto = createContext<TemaContextoProps>({
+  tema: 'claro',
+  cambiarTema: () => {},
+});
 
-interface ProveedorTemaProps {
+interface TemaProveedorProps {
   children: ReactNode;
 }
 
-export function ProveedorTema({ children }: ProveedorTemaProps) {
-  const [tema, setTema] = useState<Tema>("light");
+export const TemaProveedor = ({ children }: TemaProveedorProps) => {
+  const [tema, setTema] = useState<'claro' | 'oscuro'>('claro');
   const [montado, setMontado] = useState(false);
 
   useEffect(() => {
-    // Recuperar tema guardado o usar preferencia del sistema
-    const temaGuardado = localStorage.getItem("theme") as Tema | null;
-    
+    setMontado(true);
+    const temaGuardado = localStorage.getItem('tema') as 'claro' | 'oscuro';
     if (temaGuardado) {
       setTema(temaGuardado);
-    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTema("dark");
+      document.body.className = `tema-${temaGuardado}`;
+    } else {
+      // Detectar preferencia del sistema
+      const prefiereModoOscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const temaInicial = prefiereModoOscuro ? 'oscuro' : 'claro';
+      setTema(temaInicial);
+      document.body.className = `tema-${temaInicial}`;
     }
-    
-    setMontado(true);
   }, []);
 
-  useEffect(() => {
-    if (montado) {
-      // Aplicar tema al documento
-      document.documentElement.setAttribute("data-theme", tema);
-      // Guardar tema en localStorage
-      localStorage.setItem("theme", tema);
-    }
-  }, [tema, montado]);
-
-  const alternarTema = () => {
-    setTema(temaActual => temaActual === "light" ? "dark" : "light");
+  const cambiarTema = () => {
+    const nuevoTema = tema === 'claro' ? 'oscuro' : 'claro';
+    setTema(nuevoTema);
+    document.body.className = `tema-${nuevoTema}`;
+    localStorage.setItem('tema', nuevoTema);
   };
 
-  // Evitar renderizado hidratación
   if (!montado) {
     return <>{children}</>;
   }
 
   return (
-    <TemaContexto.Provider value={{ tema, alternarTema }}>
+    <TemaContexto.Provider value={{ tema, cambiarTema }}>
       {children}
     </TemaContexto.Provider>
   );
-}
-
-export function useTema() {
-  const contexto = useContext(TemaContexto);
-  
-  if (contexto === undefined) {
-    throw new Error("useTema debe utilizarse dentro de un ProveedorTema");
-  }
-  
-  return contexto;
-}
+};

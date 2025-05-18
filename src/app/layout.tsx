@@ -1,31 +1,26 @@
-import { Metadata } from "next";
-import "./globals.css";
-import { ProveedorTema } from "@/context/TemaContexto";
-import { Inter } from 'next/font/google';
+"use client";
 
-// Cargar la fuente Inter
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
+import { TemaProveedor } from '@/context/TemaContexto';
+import { ReactNode } from 'react';
 
-export const metadata: Metadata = {
-  title: "WorkPRD - Flujo de Trabajo para Desarrollo de Productos con IA",
-  description: "Herramientas avanzadas de flujo de trabajo PRD para optimizar el desarrollo de productos con asistentes de IA",
-};
-
-interface RootLayoutProps {
-  children: React.ReactNode;
-}
-
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
-    <html lang="es" className={inter.className}>
+    <html lang="es">
+      <head>
+        <title>Desarrollo Guiado por PRD & RFC</title>
+        <meta name="description" content="Herramientas y prompts para desarrollo guiado por PRD y RFC" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+      </head>
       <body>
-        <ProveedorTema>
+        <TemaProveedor>
           {children}
-        </ProveedorTema>
+        </TemaProveedor>
       </body>
     </html>
   );
