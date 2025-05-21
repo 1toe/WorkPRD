@@ -13,6 +13,34 @@
     <link rel="preload" href="../css/styles.css" as="style">
     <link rel="preload" href="../css/modal.css" as="style">
     <link rel="preload" href="../js/main.js" as="script">
+    <style>
+        .markdown-content {
+            background-color: var(--color-bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border-left: 4px solid var(--color-primary);
+            overflow-x: auto;
+        }
+
+        .markdown-content h1,
+        .markdown-content h2,
+        .markdown-content h3 {
+            color: var(--color-primary);
+        }
+
+        .markdown-content ul {
+            padding-left: 1.5rem;
+        }
+
+        .markdown-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .markdown-content p {
+            line-height: 1.6;
+        }
+    </style>
 </head>
 
 <body>
@@ -51,6 +79,7 @@
                 <li><a href="#analisis-brechas">Análisis de Brechas</a></li>
                 <li><a href="#recomendaciones">Recomendaciones</a></li>
                 <li><a href="#entregables">Entregables</a></li>
+                <li><a href="#prompt-completo">Prompt Completo</a></li>
             </ul>
         </div>
     </nav>
@@ -61,10 +90,12 @@
                 <h2>Descripción</h2>
                 <div class="prompt-details">
                     <p>Este prompt revisa tu PRD existente para identificar brechas, mejorar la claridad y asegurar que esté listo para implementación.</p>
-                    
+
                     <div class="action-buttons">
-                        <button class="view-prompt-btn" data-prompt="prd-comprehensive-verification">Ver Prompt Completo</button>
-                        <button class="copy-prompt-btn" data-prompt="prd-comprehensive-verification">Copiar Prompt</button>
+                        <button class="view-prompt-btn" data-prompt="prd-comprehensive-verification">Ver Prompt Completo
+                        </button>
+                        <button class="copy-prompt-btn" data-prompt="prd-comprehensive-verification">Copiar Prompt
+                        </button>
                     </div>
                 </div>
             </div>
@@ -112,12 +143,113 @@
                 </div>
             </div>
         </section>
+
+        <section id="prompt-completo" class="section">
+            <div class="container">
+                <h2>Prompt Completo</h2>
+                <div class="markdown-content">
+                    <p>You are an expert product manager tasked with reviewing a Product Requirements Document (PRD). Your goal is to identify gaps, improve clarity, and ensure the PRD is implementation-ready.</p>
+
+                    <p>This prompt is designed to follow the interactive PRD creation process. Review the "prd.md" file created in the previous step and provide actionable feedback to improve it.</p>
+
+                    <h2>STEP 1: GAP ANALYSIS</h2>
+
+                    <p>Quickly identify any critical missing elements in these key areas:</p>
+
+                    <h3>1. PRODUCT FUNDAMENTALS</h3>
+                    <ul>
+                        <li>Product vision and problem statement</li>
+                        <li>Target users and their needs</li>
+                        <li>Success metrics and scope boundaries</li>
+                    </ul>
+
+                    <h3>2. TECHNICAL REQUIREMENTS</h3>
+                    <ul>
+                        <li>Technology constraints and integrations</li>
+                        <li>Security, performance, and scalability needs</li>
+                        <li>Infrastructure requirements</li>
+                    </ul>
+
+                    <h3>3. BUSINESS CONSIDERATIONS</h3>
+                    <ul>
+                        <li>Timeline and budget constraints</li>
+                        <li>Regulatory requirements</li>
+                        <li>Market factors and business model</li>
+                    </ul>
+
+                    <h3>4. IMPLEMENTATION FACTORS</h3>
+                    <ul>
+                        <li>Dependencies and third-party requirements</li>
+                        <li>Team resources and skills needed</li>
+                        <li>Testing and deployment needs</li>
+                    </ul>
+
+                    <h2>STEP 2: IMPROVEMENT RECOMMENDATIONS</h2>
+
+                    <p>Provide specific recommendations to improve the PRD in these areas:</p>
+
+                    <h3>1. STRUCTURE & CLARITY</h3>
+                    <ul>
+                        <li>Ensure all essential sections are included</li>
+                        <li>Clarify ambiguous requirements</li>
+                        <li>Format user stories properly</li>
+                    </ul>
+
+                    <h3>2. COMPLETENESS & FEASIBILITY</h3>
+                    <ul>
+                        <li>Fill gaps in user journeys</li>
+                        <li>Identify technical challenges</li>
+                        <li>Suggest alternatives for problematic requirements</li>
+                    </ul>
+
+                    <h3>3. PRIORITIZATION & IMPLEMENTATION</h3>
+                    <ul>
+                        <li>Apply MoSCoW prioritization</li>
+                        <li>Identify critical path requirements</li>
+                        <li>Suggest logical implementation sequence</li>
+                    </ul>
+
+                    <h2>DELIVERABLES</h2>
+
+                    <p>After your review, provide:</p>
+
+                    <h3>1. SUMMARY OF FINDINGS</h3>
+                    <ul>
+                        <li>List of critical gaps (High/Medium/Low impact)</li>
+                        <li>2-3 sentence overall assessment</li>
+                    </ul>
+
+                    <h3>2. SPECIFIC RECOMMENDATIONS</h3>
+                    <ul>
+                        <li>Concrete suggestions for improvement</li>
+                        <li>Examples of how to clarify ambiguous requirements</li>
+                    </ul>
+
+                    <h3>3. IMPROVED PRD</h3>
+                    <ul>
+                        <li>Create an enhanced version addressing the issues</li>
+                        <li>Format in clean markdown with proper structure</li>
+                    </ul>
+
+                    <h3>4. QUALITY ASSESSMENT</h3>
+                    <ul>
+                        <li>Score the PRD (1-10) on: Completeness, Clarity, Feasibility, and User-Focus</li>
+                        <li>Brief explanation of scores</li>
+                    </ul>
+
+                    <p>Save your improved PRD as "prd-improved.md" in the current directory.</p>
+
+                    <p>Be practical and focused on helping the team create a PRD that will lead to successful implementation. Remember that this is the second step in the product definition process, building upon the initial PRD created through the interactive questioning process.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="container">
             <p></p>
-            <p><a href="prompts-index.html">Volver al índice de prompts</a> | <a href="../index.html">Volver al inicio</a></p>
+            <p><a href="prompts-index.html">Volver al índice de prompts</a> | <a href="../index.html">Volver al inicio</a>
+            </p>
         </div>
     </footer>
     <script src="../js/highlight.min.js"></script>

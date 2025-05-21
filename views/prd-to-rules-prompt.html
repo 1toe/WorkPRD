@@ -12,6 +12,28 @@
     <link rel="preload" href="../css/styles.css" as="style">
     <link rel="preload" href="../css/modal.css" as="style">
     <link rel="preload" href="../js/main.js" as="script">
+    <style>
+        .markdown-content {
+            background-color: var(--color-bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border-left: 4px solid var(--color-primary);
+            overflow-x: auto;
+        }
+        .markdown-content h1, .markdown-content h2, .markdown-content h3 {
+            color: var(--color-primary);
+        }
+        .markdown-content ul {
+            padding-left: 1.5rem;
+        }
+        .markdown-content li {
+            margin-bottom: 0.5rem;
+        }
+        .markdown-content p {
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
     <!-- Modal para mostrar el contenido completo del prompt -->
@@ -48,6 +70,7 @@
                 <li><a href="#descripcion">Descripción</a></li>
                 <li><a href="#contenido">Contenido</a></li>
                 <li><a href="#ejemplo">Ejemplo</a></li>
+                <li><a href="#prompt-completo">Prompt Completo</a></li>
             </ul>
         </div>
     </nav>
@@ -104,6 +127,75 @@
 - Documentar todas las APIs con JSDoc
 - Implementar manejo de errores consistente con mensajes claros para el usuario
                     </code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="prompt-completo" class="section">
+            <div class="container">
+                <h2>Prompt Completo</h2>
+                <div class="markdown-content">
+                    <p>You are an expert software architect and technical lead tasked with creating a comprehensive RULES.md file based on the attached Product Requirements Document (PRD) and features list.</p>
+                    
+                    <p>Create a clear, structured RULES.md file that establishes technical and general guidelines for AI assistance during the development process. These rules will ensure consistency, quality, and alignment with project requirements.</p>
+                    
+                    <p>If any critical information is missing or unclear in the provided documents that prevents thorough rule creation, ask specific questions to gather the necessary details before proceeding.</p>
+                    
+                    <p>Generate the RULES.md by:</p>
+                    
+                    <h3>1. TECHNOLOGY STACK DEFINITION:</h3>
+                    <ul>
+                        <li>Identify the core technologies mentioned or implied in the PRD/features</li>
+                        <li>Specify the latest stable versions to use for each technology</li>
+                        <li>Define any specific libraries, frameworks, or tools required</li>
+                    </ul>
+                    
+                    <h3>2. TECHNICAL PREFERENCES:</h3>
+                    <ul>
+                        <li>Establish naming conventions for files, components, variables, etc.</li>
+                        <li>Define code organization principles (folder structure, modularity)</li>
+                        <li>Specify architectural patterns to follow</li>
+                        <li>Set standards for data handling, state management, and API interactions</li>
+                        <li>Outline performance requirements and optimization strategies</li>
+                        <li>Define security practices and requirements</li>
+                    </ul>
+                    
+                    <h3>3. DEVELOPMENT STANDARDS:</h3>
+                    <ul>
+                        <li>Establish testing requirements and coverage expectations</li>
+                        <li>Define documentation standards</li>
+                        <li>Specify error handling and logging requirements</li>
+                        <li>Set accessibility standards to follow</li>
+                        <li>Define responsive design requirements</li>
+                    </ul>
+                    
+                    <h3>4. IMPLEMENTATION PRIORITIES:</h3>
+                    <ul>
+                        <li>Clarify which features are core vs. enhancements</li>
+                        <li>Establish any phased implementation approach</li>
+                        <li>Define quality thresholds that must be met</li>
+                    </ul>
+                    
+                    <h3>5. GENERAL GUIDELINES:</h3>
+                    <ul>
+                        <li>Establish rules for following requirements precisely</li>
+                        <li>Define expectations for code quality, readability, and maintainability</li>
+                        <li>Set standards for completeness (no TODOs or placeholders)</li>
+                        <li>Establish communication guidelines for questions or clarifications</li>
+                        <li>Define how to handle uncertainty or ambiguity</li>
+                    </ul>
+                    
+                    <h3>6. RULES.MD CREATION:</h3>
+                    <ul>
+                        <li>Format the rules in clean, well-structured markdown</li>
+                        <li>Organize rules logically with clear headings</li>
+                        <li>Ensure rules are specific, actionable, and unambiguous</li>
+                        <li>Include examples where helpful for clarity</li>
+                    </ul>
+                    
+                    <p>First, provide a brief overview of the project based on the PRD and features list. Then create the comprehensive RULES.md content following the structure above.</p>
+                    
+                    <p>Ensure the rules are specific enough to guide development but flexible enough to allow for creative problem-solving where appropriate.</p>
                 </div>
             </div>
         </section>

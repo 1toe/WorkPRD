@@ -12,6 +12,28 @@
     <link rel="preload" href="../css/styles.css" as="style">
     <link rel="preload" href="../css/modal.css" as="style">
     <link rel="preload" href="../js/main.js" as="script">
+    <style>
+        .markdown-content {
+            background-color: var(--color-bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border-left: 4px solid var(--color-primary);
+            overflow-x: auto;
+        }
+        .markdown-content h1, .markdown-content h2, .markdown-content h3 {
+            color: var(--color-primary);
+        }
+        .markdown-content ul {
+            padding-left: 1.5rem;
+        }
+        .markdown-content li {
+            margin-bottom: 0.5rem;
+        }
+        .markdown-content p {
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
     <!-- Modal para mostrar el contenido completo del prompt -->
@@ -48,6 +70,7 @@
                 <li><a href="#descripcion">Descripción</a></li>
                 <li><a href="#proceso">Proceso</a></li>
                 <li><a href="#ejemplo">Ejemplo</a></li>
+                <li><a href="#prompt-completo">Prompt Completo</a></li>
             </ul>
         </div>
     </nav>
@@ -109,6 +132,77 @@ El proyecto utilizará una estructura modular basada en características con:
 - Configurar alias de importación para mejorar la legibilidad del código
 - Establecer scripts de NPM consistentes para tareas comunes
                     </code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="prompt-completo" class="section">
+            <div class="container">
+                <h2>Prompt Completo</h2>
+                <div class="markdown-content">
+                    <p>You are an expert software architect and project manager tasked with breaking down the attached Product Requirements Document (PRD), features list, and project rules into manageable Request for Comments (RFC) documents for implementation.</p>
+                    
+                    <p>Create a set of well-structured RFC documents that divide the project into logical, implementable units of work. Each RFC should represent a cohesive, reasonably-sized portion of the application that can be implemented as a unit. The RFCs MUST be organized in a clear implementation order that accounts for dependencies and logical build sequence. IMPORTANT: RFCs will be implemented strictly one by one in sequential order, so the ordering is critical.</p>
+                    
+                    <p>If any critical information is missing or unclear in the provided documents that prevents thorough RFC creation, ask specific questions to gather the necessary details before proceeding.</p>
+                    
+                    <p>Generate the RFCs files under RFCs folder including PROMPT CREATION md files by:</p>
+                    
+                    <h3>1. IMPLEMENTATION ORDER ANALYSIS:</h3>
+                    <ul>
+                        <li>Analyze the entire project to determine the optimal implementation sequence</li>
+                        <li>Identify foundation components that must be built first</li>
+                        <li>Create a directed graph of feature dependencies (described textually)</li>
+                        <li>Determine critical path items that block other development</li>
+                        <li>Group features into implementation phases based on dependencies</li>
+                        <li>Assign sequential numbers to RFCs that reflect their strict implementation order (001, 002, 003, etc.)</li>
+                        <li>CRITICAL: Each RFC will be implemented one at a time in numerical order, so the sequence must be logical and buildable</li>
+                        <li>Each RFC must be fully implementable after all previous RFCs in the sequence have been completed</li>
+                        <li>No parallel implementation will occur - RFC-002 will only begin after RFC-001 is complete</li>
+                        <li>Map all dependencies between features to ensure the sequential order is feasible</li>
+                    </ul>
+                    
+                    <h3>2. FEATURE GROUPING:</h3>
+                    <ul>
+                        <li>Group related features that should be implemented together in a single RFC</li>
+                        <li>Ensure each RFC represents a logical, cohesive unit of functionality</li>
+                        <li>Balance RFC size - not too small (trivial) or too large (unmanageable)</li>
+                        <li>Consider dependencies between features when grouping</li>
+                        <li>Identify shared components or services that multiple features might depend on</li>
+                        <li>Organize groups to align with the strict sequential implementation order</li>
+                        <li>Ensure features that build upon each other are grouped in the correct sequence</li>
+                    </ul>
+                    
+                    <!-- El contenido es muy largo, así que he resumido una parte -->
+                    
+                    <h3>3. RFC STRUCTURE:</h3>
+                    <ul>
+                        <li>Assign a unique identifier to each RFC that reflects implementation order</li>
+                        <li>Provide a clear title that describes the functionality</li>
+                        <li>Include a summary of what the RFC covers</li>
+                        <li>List all features/requirements addressed in the RFC</li>
+                        <li>Detail technical approach and architecture considerations</li>
+                        <li>Explicitly identify which previous RFCs this RFC builds upon</li>
+                        <li>Specify which future RFCs will build upon this RFC</li>
+                        <li>Estimate relative complexity (Low, Medium, High)</li>
+                        <li>Include detailed acceptance criteria for each feature</li>
+                        <li>Specify any API contracts or interfaces that will be exposed</li>
+                    </ul>
+                    
+                    <h3>4. IMPLEMENTATION CONSIDERATIONS:</h3>
+                    <ul>
+                        <li>Highlight any technical challenges or considerations</li>
+                        <li>Note any specific rules from RULES.md that particularmente apply to this RFC</li>
+                        <li>Identify potential edge cases or special handling requirements</li>
+                        <li>Suggest testing approaches for the functionality</li>
+                        <li>Specify performance expectations and optimization considerations</li>
+                    </ul>
+                    
+                    <p>First, provide a brief overview of how you've approached breaking down the project, with special emphasis on the sequential implementation order you've determined. Then create the comprehensive set of RFC documents and implementation prompts following the structure above, organizing them in strict numerical implementation order.</p>
+                    
+                    <p>Ensure each RFC is specific enough to guide implementation but flexible enough to allow for engineering decisions during development. Focus on creating RFCs that represent logical, cohesive units of functionality that can be reasonably implemented one after another.</p>
+                    
+                    <p>The goal is to provide AI implementers with complete, unambiguous specifications that enable them to produce high-quality code without requiring additional clarification, while following a strict sequential implementation order. Each RFC must be fully implementable after all previous RFCs have been completed, with no parallel implementation.</p>
                 </div>
             </div>
         </section>

@@ -13,6 +13,34 @@
     <link rel="preload" href="../css/styles.css" as="style">
     <link rel="preload" href="../css/modal.css" as="style">
     <link rel="preload" href="../js/main.js" as="script">
+    <style>
+        .markdown-content {
+            background-color: var(--color-bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border-left: 4px solid var(--color-primary);
+            overflow-x: auto;
+        }
+
+        .markdown-content h1,
+        .markdown-content h2,
+        .markdown-content h3 {
+            color: var(--color-primary);
+        }
+
+        .markdown-content ul {
+            padding-left: 1.5rem;
+        }
+
+        .markdown-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .markdown-content p {
+            line-height: 1.6;
+        }
+    </style>
 </head>
 
 <body>
@@ -50,6 +78,7 @@
                 <li><a href="#descripcion">Descripción</a></li>
                 <li><a href="#proceso">Proceso</a></li>
                 <li><a href="#ejemplo">Ejemplo</a></li>
+                <li><a href="#prompt-completo">Prompt Completo</a></li>
             </ul>
         </div>
     </nav>
@@ -119,6 +148,75 @@
 - Protección contra ataques de fuerza bruta
 **Complejidad:** Baja
                     </code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="prompt-completo" class="section">
+            <div class="container">
+                <h2>Prompt Completo</h2>
+                <div class="markdown-content">
+                    <p>Usted es un experto gerente de producto y líder técnico encargado de extraer y organizar características del Documento de Requisitos del Producto (PRD) adjunto.</p>
+
+                    <p>Crear un archivo features.md completo que describa claramente todas las características descritas en el PRD, organizadas por prioridad y categoría. Esta lista de características será utilizada por el equipo de desarrollo para la planificación de la implementación.</p>
+
+                    <p>Si falta información crítica o no está clara en el PRD que impida una extracción exhaustiva de características, haga preguntas específicas para recopilar los detalles necesarios antes de continuar.</p>
+
+                    <p>Extraer y organizar las características por:</p>
+
+                    <h3>1. IDENTIFICACIÓN DE CARACTERÍSTICAS:</h3>
+                    <ul>
+                        <li>Extraer todas las características explícitas e implícitas mencionadas en el PRD</li>
+                        <li>Asegurarse de que cada característica sea discreta, específica y implementable</li>
+                        <li>Asignar un identificador único a cada característica (por ejemplo, F1, F2, F3)</li>
+                    </ul>
+
+                    <h3>2. CATEGORIZACIÓN DE CARACTERÍSTICAS:</h3>
+                    <ul>
+                        <li>Agrupar características por categorías lógicas (por ejemplo, Autenticación de Usuario, Panel de Control, Informes)</li>
+                        <li>Identificar características centrales frente a mejoras o características deseables</li>
+                        <li>Etiquetar características por tipo de usuario/persona cuando sea aplicable</li>
+                    </ul>
+
+                    <h3>3. PRIORIZACIÓN:</h3>
+                    <ul>
+                        <li>Aplicar la priorización MoSCoW a cada característica:
+                            <ul>
+                                <li>Imprescindible: Crítico para el producto mínimo viable</li>
+                                <li>Importante: Importante pero no crítico para el lanzamiento inicial</li>
+                                <li>Deseable: Deseable pero se puede posponer</li>
+                                <li>Fuera de alcance: Fuera del alcance para el lanzamiento actual pero anotado para el futuro</li>
+                            </ul>
+                        </li>
+                        <li>Considerar las dependencias entre características al priorizar</li>
+                    </ul>
+
+                    <h3>4. DETALLE DE CARACTERÍSTICAS:</h3>
+                    <ul>
+                        <li>Proporcionar una descripción clara y concisa para cada característica</li>
+                        <li>Incluir criterios de aceptación para cada característica</li>
+                        <li>Nota sobre cualquier consideración o restricción técnica</li>
+                        <li>Identificar posibles casos límite o requisitos de manejo especial</li>
+                    </ul>
+
+                    <h3>5. COMPLEJIDAD DE IMPLEMENTACIÓN:</h3>
+                    <ul>
+                        <li>Estimar la complejidad relativa de cada característica (Baja, Media, Alta)</li>
+                        <li>Identificar características que puedan requerir integraciones de terceros o experiencia especial</li>
+                        <li>Nota sobre cualquier característica que pueda presentar desafíos técnicos significativos</li>
+                    </ul>
+
+                    <h3>6. CREACIÓN DE FEATURES.MD:</h3>
+                    <ul>
+                        <li>Formatear la lista de características en un markdown limpio y bien estructurado</li>
+                        <li>Incluir una tabla de contenido con enlaces a cada categoría</li>
+                        <li>Agregar una sección de resumen con recuentos de características por prioridad y categoría</li>
+                        <li>Asegurarse de que el documento sea fácil de navegar y referencia</li>
+                    </ul>
+
+                    <p>Primero, proporcione una visión general del producto basada en el PRD. Luego, cree el contenido completo de features.md siguiendo la estructura anterior.</p>
+
+                    <p>Sea específico y claro en sus descripciones de características para asegurarse de que puedan ser entendidas tanto por partes interesadas técnicas como no técnicas.</p>
                 </div>
             </div>
         </section>
