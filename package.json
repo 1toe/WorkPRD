@@ -1,9 +1,9 @@
 {
   "name": "workprd",
   "version": "1.0.0",
-  "description": "Herramientas de flujo de trabajo PRD",
+  "description": "Herramientas de flujo de trabajo PRD para asistentes de IA",
   "scripts": {
-    "build": "echo 'No build step required - static site'"
+    "build": "echo 'Sitio estático - No se requiere compilación'"
   },
   "dependencies": {},
   "devDependencies": {}
