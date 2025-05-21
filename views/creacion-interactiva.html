@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Índice de Prompts PRD Workflow Tools</title>
+    <title>Creación Interactiva de PRD</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/styles.css">
@@ -14,23 +14,11 @@
     <link rel="preload" href="../js/main.js" as="script">
 </head>
 <body>
-    <!-- Modal para mostrar el contenido completo de los prompts -->
-    <div id="prompt-modal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h2 id="modal-title">Título del Prompt</h2>
-            <div id="modal-body">
-                <!-- El contenido del prompt se insertará aquí -->
-            </div>
-            <button id="modal-copy" class="copy-button">Copiar al portapapeles</button>
-        </div>
-    </div>
-
     <header class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 style="text-align: center;">Índice de Prompts</h1>
+                    <h1 style="text-align: center;">Modo Interactivo</h1>
                 </div>
             </div>
         </div>
@@ -45,34 +33,45 @@
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="prompts-index.html">Índice de Prompts</a></li>
-                <li><a href="#lista-prompts">Lista de Prompts</a></li>
+                <li><a href="#descripcion-interactiva">Descripción</a></li>
+                <li><a href="#secciones-prd">Secciones PRD</a></li>
+                <li><a href="#proceso-interactivo">Proceso</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
-        <section id="lista-prompts" class="section">
+        <section id="descripcion-interactiva" class="section">
             <div class="container">
-                <h2>Prompts disponibles</h2>
-                <div class="prompts-list">
+                <div class="prompt-details">
+                    <!-- ...contenido del prompt correspondiente... -->
+                    <h4>Descripción</h4>
+                    <p>Este prompt actúa como un Product Manager experimentado que te guía a través de un proceso de preguntas para transformar una idea vaga de producto en un PRD completo y estructurado.</p>
+                    <h4 id="secciones-prd">Secciones del PRD</h4>
                     <ul>
-                        <li><a href="interactive-prd-creation-prompt.html">Creación Interactiva de PRD</a></li>
-                        <li><a href="prd-comprehensive-verification-prompt.html">Verificación Integral de PRD</a></li>
-                        <li><a href="prd-to-features-prompt.html">Extracción de Características de PRD</a></li>
-                        <li><a href="prd-to-rules-prompt.html">PRD a Reglas</a></li>
-                        <li><a href="prd-to-rfcs-prompt.html">PRD a RFCs</a></li>
-                        <li><a href="implementation-prompt-template.html">Plantilla de Implementación</a></li>
-                        <li><a href="prd-change-management-prompt.html">Gestión de Cambios de PRD</a></li>
+                        <li>Visión general del producto</li>
+                        <li>Metas y objetivos</li>
+                        <li>Alcance</li>
+                        <li>Personas o público objetivo</li>
+                        <li>Requisitos funcionales</li>
+                        <li>Requisitos no funcionales</li>
+                        <li>Viajes del usuario</li>
+                        <li>Métricas de éxito</li>
+                        <li>Cronograma</li>
+                        <li>Preguntas abiertas/suposiciones</li>
                     </ul>
+                    <h4 id="proceso-interactivo">Proceso</h4>
+                    <p>El prompt realiza preguntas en lotes de 3-5 preguntas relacionadas a la vez, comenzando con preguntas amplias y fundamentales antes de profundizar en detalles específicos.</p>
+                    <div class="prompt-filename">
+                        <code>interactive-prd-creation-prompt.md</code>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-
     <footer>
         <div class="container">
             <p>Este proyecto está licenciado bajo la Licencia MIT.</p>
-            <p><a href="../index.html">Volver al inicio</a></p>
         </div>
     </footer>
     <script src="../js/highlight.min.js"></script>
