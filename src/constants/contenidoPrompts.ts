@@ -1,5 +1,5 @@
 /**
- * Contenido de los prompts traducidos al español
+ * Contenido de los prompts
  */
 const promptsContent = {
   "interactive-prd-creation": `
